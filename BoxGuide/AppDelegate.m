@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <RESideMenu.h>
+#import "BGRootMenuViewController.h"
+#import "BGSeriesViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:[[BGSeriesViewController alloc] init] leftMenuViewController:[[BGRootMenuViewController alloc] init] rightMenuViewController:nil];
+    sideMenuViewController.contentViewScaleValue = 0.9;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = sideMenuViewController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
