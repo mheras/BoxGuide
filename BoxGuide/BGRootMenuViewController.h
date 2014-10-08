@@ -10,4 +10,6 @@
 
 @interface BGRootMenuViewController : BGViewController
 
+- (UIViewController *)defaultViewController;
+
 @end

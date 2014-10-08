@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F151C19E4ACEF00F7028C /* BGTableViewCell.m */; };
+		502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */; };
+		502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */; };
+		502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152E19E4F51300F7028C /* BGDummyViewController.m */; };
+		502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F153019E4F52900F7028C /* BGDummyViewController.xib */; };
 		50AB1AF919DCDB2400ABFF4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AF819DCDB2400ABFF4E /* main.m */; };
 		50AB1AFC19DCDB2400ABFF4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AFB19DCDB2400ABFF4E /* AppDelegate.m */; };
 		50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AB1B0319DCDB2400ABFF4E /* Images.xcassets */; };
@@ -31,6 +36,14 @@
 
 /* Begin PBXFileReference section */
 		18B6A771FEF29E7EBB631F8A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		502F151B19E4ACEF00F7028C /* BGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTableViewCell.h; sourceTree = "<group>"; };
+		502F151C19E4ACEF00F7028C /* BGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTableViewCell.m; sourceTree = "<group>"; };
+		502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGRootMenuTableViewCell.xib; sourceTree = "<group>"; };
+		502F152819E4EA0600F7028C /* BGRootMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGRootMenuTableViewCell.h; sourceTree = "<group>"; };
+		502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGRootMenuTableViewCell.m; sourceTree = "<group>"; };
+		502F152D19E4F51300F7028C /* BGDummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGDummyViewController.h; sourceTree = "<group>"; };
+		502F152E19E4F51300F7028C /* BGDummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGDummyViewController.m; sourceTree = "<group>"; };
+		502F153019E4F52900F7028C /* BGDummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGDummyViewController.xib; sourceTree = "<group>"; };
 		50AB1AF319DCDB2400ABFF4E /* BoxGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AB1AF719DCDB2400ABFF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50AB1AF819DCDB2400ABFF4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,6 +119,14 @@
 				50C4D65919E390C60051F236 /* BGSeriesViewController.h */,
 				50C4D65A19E390C60051F236 /* BGSeriesViewController.m */,
 				50C4D65C19E392260051F236 /* BGSeriesViewController.xib */,
+				502F151B19E4ACEF00F7028C /* BGTableViewCell.h */,
+				502F151C19E4ACEF00F7028C /* BGTableViewCell.m */,
+				502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */,
+				502F152819E4EA0600F7028C /* BGRootMenuTableViewCell.h */,
+				502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */,
+				502F152D19E4F51300F7028C /* BGDummyViewController.h */,
+				502F152E19E4F51300F7028C /* BGDummyViewController.m */,
+				502F153019E4F52900F7028C /* BGDummyViewController.xib */,
 			);
 			path = BoxGuide;
 			sourceTree = "<group>";
@@ -236,7 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C4D65D19E392260051F236 /* BGSeriesViewController.xib in Resources */,
+				502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */,
 				50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */,
+				502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */,
 				50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,10 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
 				50AB1AFC19DCDB2400ABFF4E /* AppDelegate.m in Sources */,
+				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,
 				50C4D65B19E390C60051F236 /* BGSeriesViewController.m in Sources */,
+				502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */,
 				50AB1AF919DCDB2400ABFF4E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

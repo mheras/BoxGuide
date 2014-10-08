@@ -17,11 +17,15 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:[[BGSeriesViewController alloc] init] leftMenuViewController:[[BGRootMenuViewController alloc] init] rightMenuViewController:nil];
+
+    BGRootMenuViewController *rootMenuViewController = [[BGRootMenuViewController alloc] init];
+
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:[rootMenuViewController defaultViewController] leftMenuViewController:rootMenuViewController rightMenuViewController:nil];
     sideMenuViewController.contentViewScaleValue = 0.9;
+    sideMenuViewController.bouncesHorizontally = NO;
+    sideMenuViewController.menuPreferredStatusBarStyle = UIStatusBarStyleLightContent;
+    sideMenuViewController.view.backgroundColor = [UIColor darkGrayColor];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = sideMenuViewController;

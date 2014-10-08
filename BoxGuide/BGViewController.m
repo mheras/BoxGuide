@@ -14,9 +14,4 @@
 
 @implementation BGViewController
 
-- (id)init {
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
-    return self;
-}
-
 @end
