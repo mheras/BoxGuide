@@ -21,6 +21,7 @@
 		50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */; };
 		50C4D65B19E390C60051F236 /* BGSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65A19E390C60051F236 /* BGSeriesViewController.m */; };
 		50C4D65D19E392260051F236 /* BGSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65C19E392260051F236 /* BGSeriesViewController.xib */; };
+		50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50D745A919E506510088C99C /* FontAwesome.ttf */; };
 		AF5F1C887FF376C63A605715 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BB300E1A651F60EA343B50 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		50C4D65919E390C60051F236 /* BGSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGSeriesViewController.h; sourceTree = "<group>"; };
 		50C4D65A19E390C60051F236 /* BGSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGSeriesViewController.m; sourceTree = "<group>"; };
 		50C4D65C19E392260051F236 /* BGSeriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGSeriesViewController.xib; sourceTree = "<group>"; };
+		50D745A919E506510088C99C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		8BBE96D43D6026F604F89F3E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F2BB300E1A651F60EA343B50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,8 +111,6 @@
 			children = (
 				50AB1AFA19DCDB2400ABFF4E /* AppDelegate.h */,
 				50AB1AFB19DCDB2400ABFF4E /* AppDelegate.m */,
-				50AB1B0319DCDB2400ABFF4E /* Images.xcassets */,
-				50AB1AF619DCDB2400ABFF4E /* Supporting Files */,
 				50C4D65119E38F290051F236 /* BGViewController.h */,
 				50C4D65219E38F290051F236 /* BGViewController.m */,
 				50C4D65419E38F560051F236 /* BGRootMenuViewController.h */,
@@ -127,6 +127,9 @@
 				502F152D19E4F51300F7028C /* BGDummyViewController.h */,
 				502F152E19E4F51300F7028C /* BGDummyViewController.m */,
 				502F153019E4F52900F7028C /* BGDummyViewController.xib */,
+				50AB1B0319DCDB2400ABFF4E /* Images.xcassets */,
+				50D745A819E5061D0088C99C /* Resources */,
+				50AB1AF619DCDB2400ABFF4E /* Supporting Files */,
 			);
 			path = BoxGuide;
 			sourceTree = "<group>";
@@ -155,6 +158,14 @@
 				50AB1B1119DCDB2400ABFF4E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50D745A819E5061D0088C99C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50D745A919E506510088C99C /* FontAwesome.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6A9A4757BA15A59CB25F14DC /* Pods */ = {
@@ -261,6 +272,7 @@
 				50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */,
 				502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */,
 				50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */,
+				50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
