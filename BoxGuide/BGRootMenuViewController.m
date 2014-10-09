@@ -9,6 +9,7 @@
 #import "BGRootMenuViewController.h"
 #import "BGRootMenuTableViewCell.h"
 #import "BGDummyViewController.h" // TODO: Remove it.
+#import "BGSeriesViewController.h" // TODO: Remove it.
 #import <RESideMenu.h>
 
 static NSString * const kOptionSeriesKey = @"Series";
@@ -32,7 +33,7 @@ static NSString * const kOptionHelpKey = @"Help";
     self = [super init];
     if (self) {
         
-        self.viewControllerPerOption = @{kOptionSeriesKey : [[BGDummyViewController alloc] init], kOptionListsKey : [[BGDummyViewController alloc] init], kOptionMoviesKey : [[BGDummyViewController alloc] init], kOptionStatisticsKey : [[BGDummyViewController alloc] init], kOptionConfigurationKey : [[BGDummyViewController alloc] init], kOptionHelpKey : [[BGDummyViewController alloc] init]};
+        self.viewControllerPerOption = @{kOptionSeriesKey : [[BGSeriesViewController alloc] init], kOptionListsKey : [[BGDummyViewController alloc] init], kOptionMoviesKey : [[BGDummyViewController alloc] init], kOptionStatisticsKey : [[BGDummyViewController alloc] init], kOptionConfigurationKey : [[BGDummyViewController alloc] init], kOptionHelpKey : [[BGDummyViewController alloc] init]};
         self.optionsPerSection = @[@[kOptionSeriesKey, kOptionListsKey, kOptionMoviesKey, kOptionStatisticsKey], @[kOptionConfigurationKey, kOptionHelpKey]];
     }
     return self;

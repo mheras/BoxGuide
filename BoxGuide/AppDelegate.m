@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import <RESideMenu.h>
 #import "BGRootMenuViewController.h"
-#import "BGSeriesViewController.h"
 
 @interface AppDelegate ()
 
