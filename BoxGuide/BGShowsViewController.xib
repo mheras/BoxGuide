@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BGSeriesViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BGShowsViewController">
             <connections>
                 <outlet property="collectionView" destination="dXp-B8-hFU" id="1cA-Ok-2nv"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4Mr-AZ-9dw"/>

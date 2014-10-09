@@ -1,5 +1,5 @@
 //
-//  BGSeriesViewController.h
+//  BGShowsViewController.h
 //  BoxGuide
 //
 //  Created by Martin Heras on 10/7/14.
@@ -8,6 +8,6 @@
 
 #import "BGViewController.h"
 
-@interface BGSeriesViewController : BGViewController
+@interface BGShowsViewController : BGViewController
 
 @end

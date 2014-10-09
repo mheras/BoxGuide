@@ -1,31 +1,32 @@
 //
-//  BGSeriesViewController.m
+//  BGShowsViewController.m
 //  BoxGuide
 //
 //  Created by Martin Heras on 10/7/14.
 //  Copyright (c) 2014 HSoft. All rights reserved.
 //
 
-#import "BGSeriesViewController.h"
-#import "BGSeries.h"
+#import "BGShowsViewController.h"
+#import "BGShow.h"
+#import "BGShowsService.h"
 
-@interface BGSeriesViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface BGShowsViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray *seriesDataSource;
+@property (nonatomic, strong) NSMutableArray *shows;
 
 @end
 
-@implementation BGSeriesViewController
+@implementation BGShowsViewController
 
 - (id)init {
     self = [super init];
     if (self) {
-        self.seriesDataSource = [[NSMutableArray alloc] init];
+        self.shows = [[NSMutableArray alloc] init];
         for (int i = 0; i < 1000; i++) {
-            BGSeries *series = [[BGSeries alloc] init];
-            series.title = [NSString stringWithFormat:@"Title %d", i];
-            [self.seriesDataSource addObject:series];
+            BGShow *show = [[BGShow alloc] init];
+            show.title = [NSString stringWithFormat:@"Title %d", i];
+            [self.shows addObject:show];
         }
     }
     return self;
@@ -38,10 +39,18 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"SeriesCell"];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    // TODO: Continue here.
+    // [[BGService sharedInstance] tre]
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.seriesDataSource count];
+    return [self.shows count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

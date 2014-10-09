@@ -9,10 +9,10 @@
 #import "BGRootMenuViewController.h"
 #import "BGRootMenuTableViewCell.h"
 #import "BGDummyViewController.h" // TODO: Remove it.
-#import "BGSeriesViewController.h" // TODO: Remove it.
+#import "BGShowsViewController.h" // TODO: Remove it.
 #import <RESideMenu.h>
 
-static NSString * const kOptionSeriesKey = @"Series";
+static NSString * const kOptionShowsKey = @"Shows";
 static NSString * const kOptionListsKey = @"Lists";
 static NSString * const kOptionMoviesKey = @"Movies";
 static NSString * const kOptionStatisticsKey = @"Statistics";
@@ -33,8 +33,8 @@ static NSString * const kOptionHelpKey = @"Help";
     self = [super init];
     if (self) {
         
-        self.viewControllerPerOption = @{kOptionSeriesKey : [[BGSeriesViewController alloc] init], kOptionListsKey : [[BGDummyViewController alloc] init], kOptionMoviesKey : [[BGDummyViewController alloc] init], kOptionStatisticsKey : [[BGDummyViewController alloc] init], kOptionConfigurationKey : [[BGDummyViewController alloc] init], kOptionHelpKey : [[BGDummyViewController alloc] init]};
-        self.optionsPerSection = @[@[kOptionSeriesKey, kOptionListsKey, kOptionMoviesKey, kOptionStatisticsKey], @[kOptionConfigurationKey, kOptionHelpKey]];
+        self.viewControllerPerOption = @{kOptionShowsKey : [[BGShowsViewController alloc] init], kOptionListsKey : [[BGDummyViewController alloc] init], kOptionMoviesKey : [[BGDummyViewController alloc] init], kOptionStatisticsKey : [[BGDummyViewController alloc] init], kOptionConfigurationKey : [[BGDummyViewController alloc] init], kOptionHelpKey : [[BGDummyViewController alloc] init]};
+        self.optionsPerSection = @[@[kOptionShowsKey, kOptionListsKey, kOptionMoviesKey, kOptionStatisticsKey], @[kOptionConfigurationKey, kOptionHelpKey]];
     }
     return self;
 }

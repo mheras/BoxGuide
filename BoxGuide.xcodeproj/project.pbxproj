@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		502637E119E7070000B80ADA /* BGSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E019E7070000B80ADA /* BGSeries.m */; };
+		502637E119E7070000B80ADA /* BGShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E019E7070000B80ADA /* BGShow.m */; };
+		502637E419E71B1900B80ADA /* BGShowsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E319E71B1900B80ADA /* BGShowsService.m */; };
+		502637EA19E71DEE00B80ADA /* BGService.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E919E71DEE00B80ADA /* BGService.m */; };
+		502637ED19E721BE00B80ADA /* BGServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637EC19E721BE00B80ADA /* BGServiceError.m */; };
 		502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F151C19E4ACEF00F7028C /* BGTableViewCell.m */; };
 		502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */; };
 		502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */; };
@@ -20,8 +23,8 @@
 		50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65219E38F290051F236 /* BGViewController.m */; };
 		50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65519E38F570051F236 /* BGRootMenuViewController.m */; };
 		50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */; };
-		50C4D65B19E390C60051F236 /* BGSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65A19E390C60051F236 /* BGSeriesViewController.m */; };
-		50C4D65D19E392260051F236 /* BGSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65C19E392260051F236 /* BGSeriesViewController.xib */; };
+		50C4D65B19E390C60051F236 /* BGShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65A19E390C60051F236 /* BGShowsViewController.m */; };
+		50C4D65D19E392260051F236 /* BGShowsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65C19E392260051F236 /* BGShowsViewController.xib */; };
 		50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50D745A919E506510088C99C /* FontAwesome.ttf */; };
 		AF5F1C887FF376C63A605715 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BB300E1A651F60EA343B50 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -38,8 +41,14 @@
 
 /* Begin PBXFileReference section */
 		18B6A771FEF29E7EBB631F8A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		502637DF19E7070000B80ADA /* BGSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGSeries.h; sourceTree = "<group>"; };
-		502637E019E7070000B80ADA /* BGSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGSeries.m; sourceTree = "<group>"; };
+		502637DF19E7070000B80ADA /* BGShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShow.h; sourceTree = "<group>"; };
+		502637E019E7070000B80ADA /* BGShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShow.m; sourceTree = "<group>"; };
+		502637E219E71B1900B80ADA /* BGShowsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShowsService.h; sourceTree = "<group>"; };
+		502637E319E71B1900B80ADA /* BGShowsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsService.m; sourceTree = "<group>"; };
+		502637E819E71DEE00B80ADA /* BGService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGService.h; sourceTree = "<group>"; };
+		502637E919E71DEE00B80ADA /* BGService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGService.m; sourceTree = "<group>"; };
+		502637EB19E721BE00B80ADA /* BGServiceError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGServiceError.h; sourceTree = "<group>"; };
+		502637EC19E721BE00B80ADA /* BGServiceError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGServiceError.m; sourceTree = "<group>"; };
 		502F151B19E4ACEF00F7028C /* BGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTableViewCell.h; sourceTree = "<group>"; };
 		502F151C19E4ACEF00F7028C /* BGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTableViewCell.m; sourceTree = "<group>"; };
 		502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGRootMenuTableViewCell.xib; sourceTree = "<group>"; };
@@ -62,9 +71,9 @@
 		50C4D65419E38F560051F236 /* BGRootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGRootMenuViewController.h; sourceTree = "<group>"; };
 		50C4D65519E38F570051F236 /* BGRootMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGRootMenuViewController.m; sourceTree = "<group>"; };
 		50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGRootMenuViewController.xib; sourceTree = "<group>"; };
-		50C4D65919E390C60051F236 /* BGSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGSeriesViewController.h; sourceTree = "<group>"; };
-		50C4D65A19E390C60051F236 /* BGSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGSeriesViewController.m; sourceTree = "<group>"; };
-		50C4D65C19E392260051F236 /* BGSeriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGSeriesViewController.xib; sourceTree = "<group>"; };
+		50C4D65919E390C60051F236 /* BGShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShowsViewController.h; sourceTree = "<group>"; };
+		50C4D65A19E390C60051F236 /* BGShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsViewController.m; sourceTree = "<group>"; };
+		50C4D65C19E392260051F236 /* BGShowsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGShowsViewController.xib; sourceTree = "<group>"; };
 		50D745A919E506510088C99C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		8BBE96D43D6026F604F89F3E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F2BB300E1A651F60EA343B50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,9 +128,9 @@
 				50C4D65419E38F560051F236 /* BGRootMenuViewController.h */,
 				50C4D65519E38F570051F236 /* BGRootMenuViewController.m */,
 				50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */,
-				50C4D65919E390C60051F236 /* BGSeriesViewController.h */,
-				50C4D65A19E390C60051F236 /* BGSeriesViewController.m */,
-				50C4D65C19E392260051F236 /* BGSeriesViewController.xib */,
+				50C4D65919E390C60051F236 /* BGShowsViewController.h */,
+				50C4D65A19E390C60051F236 /* BGShowsViewController.m */,
+				50C4D65C19E392260051F236 /* BGShowsViewController.xib */,
 				502F151B19E4ACEF00F7028C /* BGTableViewCell.h */,
 				502F151C19E4ACEF00F7028C /* BGTableViewCell.m */,
 				502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */,
@@ -133,8 +142,14 @@
 				50AB1B0319DCDB2400ABFF4E /* Images.xcassets */,
 				50D745A819E5061D0088C99C /* Resources */,
 				50AB1AF619DCDB2400ABFF4E /* Supporting Files */,
-				502637DF19E7070000B80ADA /* BGSeries.h */,
-				502637E019E7070000B80ADA /* BGSeries.m */,
+				502637DF19E7070000B80ADA /* BGShow.h */,
+				502637E019E7070000B80ADA /* BGShow.m */,
+				502637E219E71B1900B80ADA /* BGShowsService.h */,
+				502637E319E71B1900B80ADA /* BGShowsService.m */,
+				502637E819E71DEE00B80ADA /* BGService.h */,
+				502637E919E71DEE00B80ADA /* BGService.m */,
+				502637EB19E721BE00B80ADA /* BGServiceError.h */,
+				502637EC19E721BE00B80ADA /* BGServiceError.m */,
 			);
 			path = BoxGuide;
 			sourceTree = "<group>";
@@ -272,7 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C4D65D19E392260051F236 /* BGSeriesViewController.xib in Resources */,
+				50C4D65D19E392260051F236 /* BGShowsViewController.xib in Resources */,
 				502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */,
 				50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */,
 				502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */,
@@ -329,12 +344,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */,
+				502637EA19E71DEE00B80ADA /* BGService.m in Sources */,
+				502637E419E71B1900B80ADA /* BGShowsService.m in Sources */,
+				502637ED19E721BE00B80ADA /* BGServiceError.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
-				502637E119E7070000B80ADA /* BGSeries.m in Sources */,
+				502637E119E7070000B80ADA /* BGShow.m in Sources */,
 				50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,
-				50C4D65B19E390C60051F236 /* BGSeriesViewController.m in Sources */,
+				50C4D65B19E390C60051F236 /* BGShowsViewController.m in Sources */,
 				502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */,
 				50AB1AF919DCDB2400ABFF4E /* main.m in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  BGSeries.h
+//  BGServiceError.h
 //  BoxGuide
 //
 //  Created by Martin Heras on 09/10/14.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BGSeries : NSObject
+@interface BGServiceError : NSObject
 
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *error;
 
 @end
