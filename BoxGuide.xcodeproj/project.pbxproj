@@ -14,7 +14,7 @@
 		502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152E19E4F51300F7028C /* BGDummyViewController.m */; };
 		502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F153019E4F52900F7028C /* BGDummyViewController.xib */; };
 		50AB1AF919DCDB2400ABFF4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AF819DCDB2400ABFF4E /* main.m */; };
-		50AB1AFC19DCDB2400ABFF4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AFB19DCDB2400ABFF4E /* AppDelegate.m */; };
+		50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AFB19DCDB2400ABFF4E /* BGAppDelegate.m */; };
 		50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AB1B0319DCDB2400ABFF4E /* Images.xcassets */; };
 		50AB1B1319DCDB2400ABFF4E /* BoxGuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1B1219DCDB2400ABFF4E /* BoxGuideTests.m */; };
 		50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65219E38F290051F236 /* BGViewController.m */; };
@@ -51,8 +51,8 @@
 		50AB1AF319DCDB2400ABFF4E /* BoxGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AB1AF719DCDB2400ABFF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50AB1AF819DCDB2400ABFF4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		50AB1AFA19DCDB2400ABFF4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		50AB1AFB19DCDB2400ABFF4E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		50AB1AFA19DCDB2400ABFF4E /* BGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGAppDelegate.h; sourceTree = "<group>"; };
+		50AB1AFB19DCDB2400ABFF4E /* BGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGAppDelegate.m; sourceTree = "<group>"; };
 		50AB1B0319DCDB2400ABFF4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		50AB1B0C19DCDB2400ABFF4E /* BoxGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoxGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AB1B1119DCDB2400ABFF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 		50AB1AF519DCDB2400ABFF4E /* BoxGuide */ = {
 			isa = PBXGroup;
 			children = (
-				50AB1AFA19DCDB2400ABFF4E /* AppDelegate.h */,
-				50AB1AFB19DCDB2400ABFF4E /* AppDelegate.m */,
+				50AB1AFA19DCDB2400ABFF4E /* BGAppDelegate.h */,
+				50AB1AFB19DCDB2400ABFF4E /* BGAppDelegate.m */,
 				50C4D65119E38F290051F236 /* BGViewController.h */,
 				50C4D65219E38F290051F236 /* BGViewController.m */,
 				50C4D65419E38F560051F236 /* BGRootMenuViewController.h */,
@@ -331,7 +331,7 @@
 				502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
 				502637E119E7070000B80ADA /* BGSeries.m in Sources */,
-				50AB1AFC19DCDB2400ABFF4E /* AppDelegate.m in Sources */,
+				50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,
 				50C4D65B19E390C60051F236 /* BGSeriesViewController.m in Sources */,

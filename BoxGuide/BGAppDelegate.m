@@ -1,20 +1,20 @@
 //
-//  AppDelegate.m
+//  BGAppDelegate.m
 //  BoxGuide
 //
 //  Created by Martin Heras on 10/1/14.
 //  Copyright (c) 2014 HSoft. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "BGAppDelegate.h"
 #import <RESideMenu.h>
 #import "BGRootMenuViewController.h"
 
-@interface AppDelegate ()
+@interface BGAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation BGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 

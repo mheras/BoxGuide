@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  BGAppDelegate.h
 //  BoxGuide
 //
 //  Created by Martin Heras on 10/1/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface BGAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
