@@ -32,10 +32,7 @@ static NSString * const kOptionHelpKey = @"Help";
     self = [super init];
     if (self) {
         
-        // TODO: Remove this.
-        BGDummyViewController *dummyViewController = [[BGDummyViewController alloc] init];
-        
-        self.viewControllerPerOption = @{kOptionSeriesKey : dummyViewController, kOptionListsKey : dummyViewController, kOptionMoviesKey : dummyViewController, kOptionStatisticsKey : dummyViewController, kOptionConfigurationKey : dummyViewController, kOptionHelpKey : dummyViewController};
+        self.viewControllerPerOption = @{kOptionSeriesKey : [[BGDummyViewController alloc] init], kOptionListsKey : [[BGDummyViewController alloc] init], kOptionMoviesKey : [[BGDummyViewController alloc] init], kOptionStatisticsKey : [[BGDummyViewController alloc] init], kOptionConfigurationKey : [[BGDummyViewController alloc] init], kOptionHelpKey : [[BGDummyViewController alloc] init]};
         self.optionsPerSection = @[@[kOptionSeriesKey, kOptionListsKey, kOptionMoviesKey, kOptionStatisticsKey], @[kOptionConfigurationKey, kOptionHelpKey]];
     }
     return self;
@@ -46,6 +43,7 @@ static NSString * const kOptionHelpKey = @"Help";
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BGRootMenuTableViewCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([BGRootMenuTableViewCell class])];
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
 }
 
 - (UIViewController *)defaultViewController {
@@ -67,10 +65,16 @@ static NSString * const kOptionHelpKey = @"Help";
     return cell;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [indexPath isEqual:[self.tableView indexPathForSelectedRow]] ? nil : indexPath;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     BGViewController *viewController = self.viewControllerPerOption[self.optionsPerSection[indexPath.section][indexPath.row]];
     UINavigationController *contentNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self.sideMenuViewController setContentViewController:contentNavigationController animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
 }
 
 @end

@@ -14,4 +14,9 @@
 
 @implementation BGDummyViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:drand48() green:drand48() blue:drand48() alpha:1.0f];
+}
+
 @end
