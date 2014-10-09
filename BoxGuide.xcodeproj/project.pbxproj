@@ -10,7 +10,6 @@
 		502637E119E7070000B80ADA /* BGShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E019E7070000B80ADA /* BGShow.m */; };
 		502637E419E71B1900B80ADA /* BGShowsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E319E71B1900B80ADA /* BGShowsService.m */; };
 		502637EA19E71DEE00B80ADA /* BGService.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E919E71DEE00B80ADA /* BGService.m */; };
-		502637ED19E721BE00B80ADA /* BGServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637EC19E721BE00B80ADA /* BGServiceError.m */; };
 		502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F151C19E4ACEF00F7028C /* BGTableViewCell.m */; };
 		502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */; };
 		502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */; };
@@ -26,6 +25,9 @@
 		50C4D65B19E390C60051F236 /* BGShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65A19E390C60051F236 /* BGShowsViewController.m */; };
 		50C4D65D19E392260051F236 /* BGShowsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65C19E392260051F236 /* BGShowsViewController.xib */; };
 		50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50D745A919E506510088C99C /* FontAwesome.ttf */; };
+		50D745B019E738D20088C99C /* NSException+Dev.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745AF19E738D20088C99C /* NSException+Dev.m */; };
+		50D745B419E73F7F0088C99C /* BGServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B319E73F7F0088C99C /* BGServiceError.m */; };
+		50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B619E74BDD0088C99C /* NSError+Service.m */; };
 		AF5F1C887FF376C63A605715 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BB300E1A651F60EA343B50 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +49,6 @@
 		502637E319E71B1900B80ADA /* BGShowsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsService.m; sourceTree = "<group>"; };
 		502637E819E71DEE00B80ADA /* BGService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGService.h; sourceTree = "<group>"; };
 		502637E919E71DEE00B80ADA /* BGService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGService.m; sourceTree = "<group>"; };
-		502637EB19E721BE00B80ADA /* BGServiceError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGServiceError.h; sourceTree = "<group>"; };
-		502637EC19E721BE00B80ADA /* BGServiceError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGServiceError.m; sourceTree = "<group>"; };
 		502F151B19E4ACEF00F7028C /* BGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTableViewCell.h; sourceTree = "<group>"; };
 		502F151C19E4ACEF00F7028C /* BGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTableViewCell.m; sourceTree = "<group>"; };
 		502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGRootMenuTableViewCell.xib; sourceTree = "<group>"; };
@@ -75,6 +75,13 @@
 		50C4D65A19E390C60051F236 /* BGShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsViewController.m; sourceTree = "<group>"; };
 		50C4D65C19E392260051F236 /* BGShowsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGShowsViewController.xib; sourceTree = "<group>"; };
 		50D745A919E506510088C99C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		50D745AE19E738D20088C99C /* NSException+Dev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+Dev.h"; sourceTree = "<group>"; };
+		50D745AF19E738D20088C99C /* NSException+Dev.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+Dev.m"; sourceTree = "<group>"; };
+		50D745B119E739700088C99C /* BGPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGPrefix.pch; sourceTree = "<group>"; };
+		50D745B219E73F7F0088C99C /* BGServiceError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGServiceError.h; sourceTree = "<group>"; };
+		50D745B319E73F7F0088C99C /* BGServiceError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGServiceError.m; sourceTree = "<group>"; };
+		50D745B519E74BDD0088C99C /* NSError+Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Service.h"; sourceTree = "<group>"; };
+		50D745B619E74BDD0088C99C /* NSError+Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Service.m"; sourceTree = "<group>"; };
 		8BBE96D43D6026F604F89F3E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F2BB300E1A651F60EA343B50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,8 +155,13 @@
 				502637E319E71B1900B80ADA /* BGShowsService.m */,
 				502637E819E71DEE00B80ADA /* BGService.h */,
 				502637E919E71DEE00B80ADA /* BGService.m */,
-				502637EB19E721BE00B80ADA /* BGServiceError.h */,
-				502637EC19E721BE00B80ADA /* BGServiceError.m */,
+				50D745AE19E738D20088C99C /* NSException+Dev.h */,
+				50D745AF19E738D20088C99C /* NSException+Dev.m */,
+				50D745B119E739700088C99C /* BGPrefix.pch */,
+				50D745B219E73F7F0088C99C /* BGServiceError.h */,
+				50D745B319E73F7F0088C99C /* BGServiceError.m */,
+				50D745B519E74BDD0088C99C /* NSError+Service.h */,
+				50D745B619E74BDD0088C99C /* NSError+Service.m */,
 			);
 			path = BoxGuide;
 			sourceTree = "<group>";
@@ -346,13 +358,15 @@
 				502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */,
 				502637EA19E71DEE00B80ADA /* BGService.m in Sources */,
 				502637E419E71B1900B80ADA /* BGShowsService.m in Sources */,
-				502637ED19E721BE00B80ADA /* BGServiceError.m in Sources */,
+				50D745B019E738D20088C99C /* NSException+Dev.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
 				502637E119E7070000B80ADA /* BGShow.m in Sources */,
 				50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */,
+				50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,
 				50C4D65B19E390C60051F236 /* BGShowsViewController.m in Sources */,
+				50D745B419E73F7F0088C99C /* BGServiceError.m in Sources */,
 				502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */,
 				50AB1AF919DCDB2400ABFF4E /* main.m in Sources */,
 			);
@@ -400,6 +414,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BoxGuide/BGPrefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -441,6 +456,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BoxGuide/BGPrefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

@@ -13,7 +13,7 @@
 @interface BGShowsViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray *shows;
+@property (nonatomic, strong) NSArray *shows;
 
 @end
 
@@ -22,12 +22,13 @@
 - (id)init {
     self = [super init];
     if (self) {
+        /*
         self.shows = [[NSMutableArray alloc] init];
         for (int i = 0; i < 1000; i++) {
             BGShow *show = [[BGShow alloc] init];
             show.title = [NSString stringWithFormat:@"Title %d", i];
             [self.shows addObject:show];
-        }
+        }*/
     }
     return self;
 }
@@ -43,8 +44,14 @@
     
     [super viewWillAppear:animated];
     
-    // TODO: Continue here.
-    // [[BGService sharedInstance] tre]
+    __weak typeof(self) weakSelf = self;
+    
+    [[BGShowsService sharedInstance] trendingShowsWithSuccessBlock:^(NSArray *shows) {
+        weakSelf.shows = shows;
+        [weakSelf.collectionView reloadData];
+    } failureBlock:^(NSError *error) {
+        // TODO: Implement this!
+    }];
 }
 
 #pragma mark - UICollectionViewDataSource

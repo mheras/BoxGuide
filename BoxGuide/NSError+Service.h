@@ -1,5 +1,5 @@
 //
-//  BGServiceError.h
+//  NSError+Service.h
 //  BoxGuide
 //
 //  Created by Martin Heras on 10/9/14.
@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BGServiceError.h"
 
-@interface BGServiceError : NSObject
+@interface NSError (Service)
 
-@property (nonatomic, copy) NSString *status;
-@property (nonatomic, copy) NSString *error;
+@property (nonatomic, strong, readonly) BGServiceError *serviceError;
 
 @end

@@ -11,6 +11,8 @@
 
 @interface BGShowsService : BGService
 
++ (instancetype)sharedInstance;
+
 - (void)trendingShowsWithSuccessBlock:(void (^)(NSArray *shows))successBlock failureBlock:(void (^)(NSError *error))failureBlock;
 
 @end

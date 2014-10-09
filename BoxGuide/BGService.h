@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const kAPIKey;
+
+@class RKObjectManager;
+
 @interface BGService : NSObject
 
-+ (instancetype)sharedInstance;
+@property (nonatomic, strong, readonly) RKObjectManager *manager;
 
 @end
