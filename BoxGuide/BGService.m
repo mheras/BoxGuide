@@ -29,6 +29,8 @@ NSString * const kAPIKey = @"ef9f6f1920520550ffde1046162a25f2";
 - (void)setupManager:(RKObjectManager *)manager {
     
     [self setupApplicationServerErrorToManager:manager];
+    
+    
 }
 
 - (void)setupApplicationServerErrorToManager:(RKObjectManager *)manager

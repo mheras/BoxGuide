@@ -28,6 +28,8 @@ PODS:
   - FontAwesome+iOS (0.1.4)
   - ISO8601DateFormatterValueTransformer (0.6.0):
     - RKValueTransformers (~> 1.1.0)
+  - KoaPullToRefresh (1.0.6):
+    - FontAwesome+iOS
   - RESideMenu (4.0.7)
   - RestKit (0.23.3):
     - RestKit/Core
@@ -53,12 +55,13 @@ PODS:
   - TransitionKit (2.1.0)
 
 DEPENDENCIES:
-  - BlocksKit (~> 2.2)
+  - BlocksKit (= 2.2.5)
   - CocoaLumberjack (= 2.0.0-beta2)
-  - CrashlyticsFramework (~> 2.2)
-  - FontAwesome+iOS (~> 0.1)
-  - RESideMenu (~> 4.0)
-  - RestKit (~> 0.23)
+  - CrashlyticsFramework (= 2.2.4)
+  - FontAwesome+iOS (= 0.1.4)
+  - KoaPullToRefresh (~> 1.0)
+  - RESideMenu (= 4.0.7)
+  - RestKit (= 0.23.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
@@ -67,6 +70,7 @@ SPEC CHECKSUMS:
   CrashlyticsFramework: 0c28a2c07a51b7691e6668b83824b0b0be77f307
   FontAwesome+iOS: 816c20304edef4ca92835de669577005cbaaf261
   ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
+  KoaPullToRefresh: 7a9d6530482fb9d52e66de8560dcd8fe9c395751
   RESideMenu: a9c1cd2e64e60e1d3166ddac01a83e215a0e4d30
   RestKit: 193a35cddae5198388977abaedad129f8acb978b
   RKValueTransformers: b705e7b4651b9206b94600408462b74554bba969
