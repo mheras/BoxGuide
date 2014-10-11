@@ -9,6 +9,7 @@
 #import "BGShowsViewController.h"
 #import "BGShow.h"
 #import "BGShowsService.h"
+#import "BGAddShowCollectionViewCell.h"
 
 @interface BGShowsViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -31,9 +32,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
-    // TODO: Reuse identifier is hardcoded!
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"SeriesCell"];
+    
+    NSString *addShowCellClass = NSStringFromClass([BGAddShowCollectionViewCell class]);
+    [self.collectionView registerNib:[UINib nibWithNibName:addShowCellClass bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:addShowCellClass];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.collectionView addSubview:self.refreshControl];
@@ -70,8 +71,13 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"SeriesCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor greenColor];
+    
+    BGShow *show = self.shows[indexPath.row];
+    
+    BGAddShowCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BGAddShowCollectionViewCell class]) forIndexPath:indexPath];
+    cell.title = show.title;
+    cell.backgroundColor = [UIColor whiteColor];
+    
     return cell;
 }
 

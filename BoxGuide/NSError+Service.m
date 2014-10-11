@@ -15,7 +15,7 @@
     return [self.userInfo[RKObjectMapperErrorObjectsKey] firstObject];
 }
 
-- (BOOL)isCancelledError {
+- (BOOL)isCancellationError {
     return [self.domain isEqualToString:NSURLErrorDomain] && self.code == NSURLErrorCancelled;
 }
 

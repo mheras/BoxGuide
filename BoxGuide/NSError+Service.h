@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong, readonly) BGServiceError *serviceError;
 
-@property (nonatomic, assign, readonly, getter = isCancelledError) BOOL cancelledError;
+@property (nonatomic, assign, readonly, getter = isCancellationError) BOOL cancellationError;
 @property (nonatomic, assign, readonly, getter = isConnectionError) BOOL connectionError;
 
 @end
