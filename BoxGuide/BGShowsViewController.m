@@ -33,6 +33,8 @@
     
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor cyanColor];
+    
     NSString *addShowCellClass = NSStringFromClass([BGAddShowCollectionViewCell class]);
     [self.collectionView registerNib:[UINib nibWithNibName:addShowCellClass bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:addShowCellClass];
     
@@ -44,11 +46,24 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    
     [self loadContent];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //[self setupCollectionViewLayout];
 }
 
 - (void)refreshContent {
     [self loadContent];
+}
+
+- (void)viewWillLayoutSubviews {
+    
+    [super viewWillLayoutSubviews];
+    
+    [self setupCollectionViewLayout];
 }
 
 - (void)loadContent {
@@ -62,6 +77,15 @@
         // TODO: Implement this!
         [weakSelf.refreshControl endRefreshing];
     }];
+}
+
+- (void)setupCollectionViewLayout {
+    
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    
+    NSInteger columns = 1 + ((NSInteger)(CGRectGetWidth(self.collectionView.frame) - layout.sectionInset.left - layout.sectionInset.right + layout.minimumInteritemSpacing)) / ((NSInteger)(layout.minimumInteritemSpacing + 300.0 + 1.0));
+    
+    layout.itemSize = CGSizeMake((CGRectGetWidth(self.collectionView.frame) - layout.sectionInset.left - layout.sectionInset.right - ((columns - 1) * layout.minimumInteritemSpacing)) / columns, layout.itemSize.height);
 }
 
 #pragma mark - UICollectionViewDataSource

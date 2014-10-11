@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="293" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-Bm-hl2">
-                        <rect key="frame" x="0.0" y="13" width="147" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfJ-Bm-hl2">
+                        <rect key="frame" x="8" y="8" width="277" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -24,6 +24,12 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="1" green="0.35901626530897401" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="PfJ-Bm-hl2" secondAttribute="bottom" constant="8" id="6h0-5x-LJs"/>
+                <constraint firstItem="PfJ-Bm-hl2" firstAttribute="leading" secondItem="UjU-9O-MpK" secondAttribute="leading" constant="8" id="ErZ-kB-LQ8"/>
+                <constraint firstItem="PfJ-Bm-hl2" firstAttribute="top" secondItem="UjU-9O-MpK" secondAttribute="top" constant="8" id="HyU-nj-w6g"/>
+                <constraint firstAttribute="trailing" secondItem="PfJ-Bm-hl2" secondAttribute="trailing" constant="8" id="Zv0-y0-Qqc"/>
+            </constraints>
             <size key="customSize" width="293" height="53"/>
             <connections>
                 <outlet property="titleLabel" destination="PfJ-Bm-hl2" id="524-QV-j7s"/>
