@@ -30,6 +30,8 @@
 		50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B619E74BDD0088C99C /* NSError+Service.m */; };
 		50D745BA19E8BAA30088C99C /* BGAddShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B919E8BAA30088C99C /* BGAddShowCollectionViewCell.m */; };
 		50D745BC19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D745BB19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib */; };
+		50D745BF19E8E72F0088C99C /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745BE19E8E72F0088C99C /* UIImageView+URL.m */; };
+		50D745C419EB7D620088C99C /* BGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745C319EB7D620088C99C /* BGCollectionViewCell.m */; };
 		AF5F1C887FF376C63A605715 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BB300E1A651F60EA343B50 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,10 @@
 		50D745B819E8BAA30088C99C /* BGAddShowCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGAddShowCollectionViewCell.h; sourceTree = "<group>"; };
 		50D745B919E8BAA30088C99C /* BGAddShowCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGAddShowCollectionViewCell.m; sourceTree = "<group>"; };
 		50D745BB19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGAddShowCollectionViewCell.xib; sourceTree = "<group>"; };
+		50D745BD19E8E72F0088C99C /* UIImageView+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URL.h"; sourceTree = "<group>"; };
+		50D745BE19E8E72F0088C99C /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
+		50D745C219EB7D620088C99C /* BGCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCollectionViewCell.h; sourceTree = "<group>"; };
+		50D745C319EB7D620088C99C /* BGCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCollectionViewCell.m; sourceTree = "<group>"; };
 		8BBE96D43D6026F604F89F3E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F2BB300E1A651F60EA343B50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,6 +176,10 @@
 				50D745B819E8BAA30088C99C /* BGAddShowCollectionViewCell.h */,
 				50D745B919E8BAA30088C99C /* BGAddShowCollectionViewCell.m */,
 				50D745BB19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib */,
+				50D745BD19E8E72F0088C99C /* UIImageView+URL.h */,
+				50D745BE19E8E72F0088C99C /* UIImageView+URL.m */,
+				50D745C219EB7D620088C99C /* BGCollectionViewCell.h */,
+				50D745C319EB7D620088C99C /* BGCollectionViewCell.m */,
 			);
 			path = BoxGuide;
 			sourceTree = "<group>";
@@ -370,6 +380,8 @@
 				50D745B019E738D20088C99C /* NSException+Dev.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
 				502637E119E7070000B80ADA /* BGShow.m in Sources */,
+				50D745C419EB7D620088C99C /* BGCollectionViewCell.m in Sources */,
+				50D745BF19E8E72F0088C99C /* UIImageView+URL.m in Sources */,
 				50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */,
 				50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,

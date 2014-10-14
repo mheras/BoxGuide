@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BGCollectionViewCell.h"
 
-@interface BGAddShowCollectionViewCell : UICollectionViewCell
+@interface BGAddShowCollectionViewCell : BGCollectionViewCell
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) NSURL *posterImageUrl;
 
 @end

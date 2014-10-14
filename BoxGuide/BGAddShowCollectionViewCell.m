@@ -7,10 +7,12 @@
 //
 
 #import "BGAddShowCollectionViewCell.h"
+#import "UIImageView+URL.h"
 
 @interface BGAddShowCollectionViewCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -22,6 +24,14 @@
 
 - (NSString *)title {
     return self.titleLabel.text;
+}
+
+- (void)setPosterImageUrl:(NSURL *)posterImageUrl {
+    [self.imageView bg_setImageFromURL:posterImageUrl placeholderImage:nil];
+}
+
+- (NSURL *)posterImageUrl {
+    return self.imageView.bg_url;
 }
 
 @end

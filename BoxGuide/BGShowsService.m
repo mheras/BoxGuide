@@ -36,7 +36,7 @@
 - (void)setup {
     
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[BGShow class]];
-    [mapping addAttributeMappingsFromDictionary:@{@"title" : @"title", @"images.poster" : @"posterImageURL"}];
+    [mapping addAttributeMappingsFromDictionary:@{@"title" : @"title", @"images.poster" : @"posterImageUrl"}];
     
     RKResponseDescriptor *trendingShowsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:[NSString stringWithFormat:@"/shows/trending.json/%@", kAPIKey] keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [self.manager addResponseDescriptorsFromArray:@[trendingShowsResponseDescriptor]];

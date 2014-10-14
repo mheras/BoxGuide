@@ -11,6 +11,6 @@
 @interface BGShow : NSObject
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSURL *posterImageURL; // 138x203 - 300x450
+@property (nonatomic, strong) NSURL *posterImageUrl; // 138x203 - 300x450
 
 @end
