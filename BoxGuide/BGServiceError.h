@@ -10,7 +10,7 @@
 
 @interface BGServiceError : NSObject
 
-@property (nonatomic, copy) NSString *status;
-@property (nonatomic, copy) NSString *error;
+@property (nonatomic, strong) NSNumber *statusCode;
+@property (nonatomic, copy) NSString *statusMessage;
 
 @end

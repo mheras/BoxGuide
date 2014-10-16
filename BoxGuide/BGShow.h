@@ -10,7 +10,7 @@
 
 @interface BGShow : NSObject
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSURL *posterImageUrl; // 138x203 - 300x450
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *posterPath;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface BGAddShowCollectionViewCell : BGCollectionViewCell
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSURL *posterImageUrl;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSURL *posterUrl;
 
 @end

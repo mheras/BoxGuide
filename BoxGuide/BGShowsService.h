@@ -13,6 +13,6 @@
 
 + (instancetype)sharedInstance;
 
-- (void)trendingShowsWithSuccessBlock:(void (^)(NSArray *shows))successBlock failureBlock:(void (^)(NSError *error))failureBlock;
+- (void)popularShowsWithSuccessBlock:(void (^)(NSArray *shows))successBlock failureBlock:(void (^)(NSError *error))failureBlock;
 
 @end

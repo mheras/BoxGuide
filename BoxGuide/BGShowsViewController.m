@@ -81,7 +81,7 @@
 - (void)loadContent {
     
     __weak typeof(self) weakSelf = self;
-    [[BGShowsService sharedInstance] trendingShowsWithSuccessBlock:^(NSArray *shows) {
+    [[BGShowsService sharedInstance] popularShowsWithSuccessBlock:^(NSArray *shows) {
         weakSelf.shows = shows;
         [weakSelf.collectionView reloadData];
         [weakSelf.refreshControl endRefreshing];
@@ -112,8 +112,8 @@
     
     BGAddShowCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BGAddShowCollectionViewCell class]) forIndexPath:indexPath];
     
-    cell.title = show.title;
-    cell.posterImageUrl = show.posterImageUrl;
+    cell.name = show.name;
+    cell.posterUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://image.tmdb.org/t/p/w342%@", show.posterPath]];
     
     return cell;
 }

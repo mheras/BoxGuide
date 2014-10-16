@@ -26,11 +26,11 @@
     return self.titleLabel.text;
 }
 
-- (void)setPosterImageUrl:(NSURL *)posterImageUrl {
-    [self.imageView bg_setImageFromURL:posterImageUrl placeholderImage:nil];
+- (void)setPosterUrl:(NSURL *)posterUrl {
+    [self.imageView bg_setImageFromURL:posterUrl placeholderImage:nil];
 }
 
-- (NSURL *)posterImageUrl {
+- (NSURL *)posterUrl {
     return self.imageView.bg_url;
 }
 

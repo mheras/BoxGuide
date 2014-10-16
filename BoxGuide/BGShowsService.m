@@ -36,15 +36,16 @@
 - (void)setup {
     
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[BGShow class]];
-    [mapping addAttributeMappingsFromDictionary:@{@"title" : @"title", @"images.poster" : @"posterImageUrl"}];
+    // TODO: This mapping does not work. Fix it!
+    [mapping addAttributeMappingsFromDictionary:@{@"name" : @"name", @"poster_path" : @"posterPath"}];
     
-    RKResponseDescriptor *trendingShowsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:[NSString stringWithFormat:@"/shows/trending.json/%@", kAPIKey] keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    [self.manager addResponseDescriptorsFromArray:@[trendingShowsResponseDescriptor]];
+    RKResponseDescriptor *popularShowsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodGET pathPattern:@"/3/tv/popular" keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [self.manager addResponseDescriptorsFromArray:@[popularShowsResponseDescriptor]];
 }
 
-- (void)trendingShowsWithSuccessBlock:(void (^)(NSArray *shows))successBlock failureBlock:(void (^)(NSError *error))failureBlock {
+- (void)popularShowsWithSuccessBlock:(void (^)(NSArray *shows))successBlock failureBlock:(void (^)(NSError *error))failureBlock {
     
-    NSMutableURLRequest *request = [self.manager requestWithObject:nil method:RKRequestMethodGET path:[NSString stringWithFormat:@"/shows/trending.json/%@", kAPIKey] parameters:nil];
+    NSMutableURLRequest *request = [self.manager requestWithObject:nil method:RKRequestMethodGET path:@"/3/tv/popular" parameters:@{@"api_key" : kAPIKey}];
     
     RKObjectRequestOperation *operation = [self.manager objectRequestOperationWithRequest:request success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         NSArray *shows = mappingResult.array;
