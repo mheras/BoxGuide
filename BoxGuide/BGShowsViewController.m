@@ -47,8 +47,9 @@
     
     [super viewWillAppear:animated];
     
-    //[self loadContent];
+    [self loadContent];
     
+    /*
     NSMutableArray *p = [[NSMutableArray alloc] init];
     for (int i = 0; i < 4234; i++) {
         BGShow *s = [[BGShow alloc ] init];
@@ -56,6 +57,7 @@
         [p addObject:s];
     }
     self.shows = p;
+    */
 }
 
 - (void)refreshContent {
@@ -66,42 +68,15 @@
     
     [super viewWillLayoutSubviews];
     
-    [self setupCollectionViewLayout];
+    // Hack: We are dispatching the layout to prevent the following error:
+    // ****
+    // Snapshotting a view that has not been rendered results in an empty snapshot.
+    // Ensure your view has been rendered at least once before snapshotting or snapshot after screen updates.
+    // ****
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setupCollectionViewLayout];
+    });
 }
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    
-    NSIndexPath *firstAddShowCellIndexPath = [[[self.collectionView indexPathsForVisibleItems] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NSIndexPath *ip1 = obj1;
-        NSIndexPath *ip2 = obj2;
-        return [ip1 compare:ip2];
-    }] firstObject];
-    
-    if (firstAddShowCellIndexPath) {
-        NSLog(@"willRotate: %d",[firstAddShowCellIndexPath row]);
-    
-        
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1), dispatch_get_main_queue(), ^{
-            [UIView animateWithDuration:duration delay:1 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:0 animations:^{
-                [self.collectionView scrollToItemAtIndexPath:firstAddShowCellIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
-            } completion:nil];
-        });
-    }
-}
-/*
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    NSIndexPath *firstAddShowCellIndexPath = [[[self.collectionView indexPathsForVisibleItems] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NSIndexPath *ip1 = obj1;
-        NSIndexPath *ip2 = obj2;
-        return [ip1 compare:ip2];
-    }] firstObject];
-    
-    if (firstAddShowCellIndexPath) {
-        NSLog(@"didScroll: %d",[firstAddShowCellIndexPath item]);
-    }
-}*/
 
 - (void)loadContent {
     
@@ -123,8 +98,6 @@
     NSInteger columns = 1 + ((NSInteger)(CGRectGetWidth(self.collectionView.frame) - layout.sectionInset.left - layout.sectionInset.right + layout.minimumInteritemSpacing)) / ((NSInteger)(layout.minimumInteritemSpacing + 300.0 + 1.0));
     
     layout.itemSize = CGSizeMake((CGRectGetWidth(self.collectionView.frame) - layout.sectionInset.left - layout.sectionInset.right - ((columns - 1) * layout.minimumInteritemSpacing)) / columns, layout.itemSize.height);
-    
-    [layout invalidateLayout];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -139,7 +112,7 @@
     
     BGAddShowCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BGAddShowCollectionViewCell class]) forIndexPath:indexPath];
     
-    cell.title = [NSString stringWithFormat:@"%d", indexPath.item];//show.title;
+    cell.title = show.title;
     cell.posterImageUrl = show.posterImageUrl;
     
     return cell;
