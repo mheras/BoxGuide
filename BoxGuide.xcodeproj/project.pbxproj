@@ -15,6 +15,8 @@
 		502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */; };
 		502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152E19E4F51300F7028C /* BGDummyViewController.m */; };
 		502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F153019E4F52900F7028C /* BGDummyViewController.xib */; };
+		50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F4D19F07E3B006E3E05 /* BGServicePaginator.m */; };
+		50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */; };
 		50AB1AF919DCDB2400ABFF4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AF819DCDB2400ABFF4E /* main.m */; };
 		50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AFB19DCDB2400ABFF4E /* BGAppDelegate.m */; };
 		50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AB1B0319DCDB2400ABFF4E /* Images.xcassets */; };
@@ -25,7 +27,6 @@
 		50C4D65B19E390C60051F236 /* BGShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65A19E390C60051F236 /* BGShowsViewController.m */; };
 		50C4D65D19E392260051F236 /* BGShowsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65C19E392260051F236 /* BGShowsViewController.xib */; };
 		50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50D745A919E506510088C99C /* FontAwesome.ttf */; };
-		50D745B019E738D20088C99C /* NSException+Dev.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745AF19E738D20088C99C /* NSException+Dev.m */; };
 		50D745B419E73F7F0088C99C /* BGServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B319E73F7F0088C99C /* BGServiceError.m */; };
 		50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B619E74BDD0088C99C /* NSError+Service.m */; };
 		50D745BA19E8BAA30088C99C /* BGAddShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B919E8BAA30088C99C /* BGAddShowCollectionViewCell.m */; };
@@ -61,6 +62,10 @@
 		502F152D19E4F51300F7028C /* BGDummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGDummyViewController.h; sourceTree = "<group>"; };
 		502F152E19E4F51300F7028C /* BGDummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGDummyViewController.m; sourceTree = "<group>"; };
 		502F153019E4F52900F7028C /* BGDummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGDummyViewController.xib; sourceTree = "<group>"; };
+		50783F4C19F07E3B006E3E05 /* BGServicePaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGServicePaginator.h; sourceTree = "<group>"; };
+		50783F4D19F07E3B006E3E05 /* BGServicePaginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGServicePaginator.m; sourceTree = "<group>"; };
+		50783F4F19F089F6006E3E05 /* RKObjectManager+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RKObjectManager+Additions.h"; sourceTree = "<group>"; };
+		50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RKObjectManager+Additions.m"; sourceTree = "<group>"; };
 		50AB1AF319DCDB2400ABFF4E /* BoxGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AB1AF719DCDB2400ABFF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50AB1AF819DCDB2400ABFF4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,8 +84,6 @@
 		50C4D65A19E390C60051F236 /* BGShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsViewController.m; sourceTree = "<group>"; };
 		50C4D65C19E392260051F236 /* BGShowsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGShowsViewController.xib; sourceTree = "<group>"; };
 		50D745A919E506510088C99C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		50D745AE19E738D20088C99C /* NSException+Dev.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+Dev.h"; sourceTree = "<group>"; };
-		50D745AF19E738D20088C99C /* NSException+Dev.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+Dev.m"; sourceTree = "<group>"; };
 		50D745B119E739700088C99C /* BGPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGPrefix.pch; sourceTree = "<group>"; };
 		50D745B219E73F7F0088C99C /* BGServiceError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGServiceError.h; sourceTree = "<group>"; };
 		50D745B319E73F7F0088C99C /* BGServiceError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGServiceError.m; sourceTree = "<group>"; };
@@ -116,6 +119,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50783F3E19F07C00006E3E05 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				502637E219E71B1900B80ADA /* BGShowsService.h */,
+				502637E319E71B1900B80ADA /* BGShowsService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		50783F3F19F07C15006E3E05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				502637DF19E7070000B80ADA /* BGShow.h */,
+				502637E019E7070000B80ADA /* BGShow.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		50783F4019F07C38006E3E05 /* Shows */ = {
+			isa = PBXGroup;
+			children = (
+				50783F4719F07D37006E3E05 /* Views */,
+				50783F4319F07C6E006E3E05 /* View Controllers */,
+				50783F3E19F07C00006E3E05 /* Services */,
+				50783F3F19F07C15006E3E05 /* Model */,
+			);
+			name = Shows;
+			sourceTree = "<group>";
+		};
+		50783F4119F07C45006E3E05 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				502637E819E71DEE00B80ADA /* BGService.h */,
+				502637E919E71DEE00B80ADA /* BGService.m */,
+				50D745B219E73F7F0088C99C /* BGServiceError.h */,
+				50D745B319E73F7F0088C99C /* BGServiceError.m */,
+				50783F4C19F07E3B006E3E05 /* BGServicePaginator.h */,
+				50783F4D19F07E3B006E3E05 /* BGServicePaginator.m */,
+				50783F4F19F089F6006E3E05 /* RKObjectManager+Additions.h */,
+				50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		50783F4219F07C4B006E3E05 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				50783F4519F07CD7006E3E05 /* Views */,
+				50783F4419F07C80006E3E05 /* View Controllers */,
+				50783F4119F07C45006E3E05 /* Services */,
+				50783F4619F07D1B006E3E05 /* Misc */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		50783F4319F07C6E006E3E05 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				50C4D65919E390C60051F236 /* BGShowsViewController.h */,
+				50C4D65A19E390C60051F236 /* BGShowsViewController.m */,
+				50C4D65C19E392260051F236 /* BGShowsViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		50783F4419F07C80006E3E05 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				50C4D65119E38F290051F236 /* BGViewController.h */,
+				50C4D65219E38F290051F236 /* BGViewController.m */,
+				50C4D65419E38F560051F236 /* BGRootMenuViewController.h */,
+				50C4D65519E38F570051F236 /* BGRootMenuViewController.m */,
+				50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		50783F4519F07CD7006E3E05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50D745C219EB7D620088C99C /* BGCollectionViewCell.h */,
+				50D745C319EB7D620088C99C /* BGCollectionViewCell.m */,
+				502F151B19E4ACEF00F7028C /* BGTableViewCell.h */,
+				502F151C19E4ACEF00F7028C /* BGTableViewCell.m */,
+				502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */,
+				502F152819E4EA0600F7028C /* BGRootMenuTableViewCell.h */,
+				502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		50783F4619F07D1B006E3E05 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				50D745B519E74BDD0088C99C /* NSError+Service.h */,
+				50D745B619E74BDD0088C99C /* NSError+Service.m */,
+				50D745BD19E8E72F0088C99C /* UIImageView+URL.h */,
+				50D745BE19E8E72F0088C99C /* UIImageView+URL.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		50783F4719F07D37006E3E05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50D745B819E8BAA30088C99C /* BGAddShowCollectionViewCell.h */,
+				50D745B919E8BAA30088C99C /* BGAddShowCollectionViewCell.m */,
+				50D745BB19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		50AB1AEA19DCDB2400ABFF4E = {
 			isa = PBXGroup;
 			children = (
@@ -139,47 +254,17 @@
 		50AB1AF519DCDB2400ABFF4E /* BoxGuide */ = {
 			isa = PBXGroup;
 			children = (
+				50783F4219F07C4B006E3E05 /* Common */,
+				50783F4019F07C38006E3E05 /* Shows */,
 				50AB1AFA19DCDB2400ABFF4E /* BGAppDelegate.h */,
 				50AB1AFB19DCDB2400ABFF4E /* BGAppDelegate.m */,
-				50C4D65119E38F290051F236 /* BGViewController.h */,
-				50C4D65219E38F290051F236 /* BGViewController.m */,
-				50C4D65419E38F560051F236 /* BGRootMenuViewController.h */,
-				50C4D65519E38F570051F236 /* BGRootMenuViewController.m */,
-				50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */,
-				50C4D65919E390C60051F236 /* BGShowsViewController.h */,
-				50C4D65A19E390C60051F236 /* BGShowsViewController.m */,
-				50C4D65C19E392260051F236 /* BGShowsViewController.xib */,
-				502F151B19E4ACEF00F7028C /* BGTableViewCell.h */,
-				502F151C19E4ACEF00F7028C /* BGTableViewCell.m */,
-				502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */,
-				502F152819E4EA0600F7028C /* BGRootMenuTableViewCell.h */,
-				502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */,
-				502F152D19E4F51300F7028C /* BGDummyViewController.h */,
-				502F152E19E4F51300F7028C /* BGDummyViewController.m */,
-				502F153019E4F52900F7028C /* BGDummyViewController.xib */,
+				50D745B119E739700088C99C /* BGPrefix.pch */,
 				50AB1B0319DCDB2400ABFF4E /* Images.xcassets */,
 				50D745A819E5061D0088C99C /* Resources */,
 				50AB1AF619DCDB2400ABFF4E /* Supporting Files */,
-				502637DF19E7070000B80ADA /* BGShow.h */,
-				502637E019E7070000B80ADA /* BGShow.m */,
-				502637E219E71B1900B80ADA /* BGShowsService.h */,
-				502637E319E71B1900B80ADA /* BGShowsService.m */,
-				502637E819E71DEE00B80ADA /* BGService.h */,
-				502637E919E71DEE00B80ADA /* BGService.m */,
-				50D745AE19E738D20088C99C /* NSException+Dev.h */,
-				50D745AF19E738D20088C99C /* NSException+Dev.m */,
-				50D745B119E739700088C99C /* BGPrefix.pch */,
-				50D745B219E73F7F0088C99C /* BGServiceError.h */,
-				50D745B319E73F7F0088C99C /* BGServiceError.m */,
-				50D745B519E74BDD0088C99C /* NSError+Service.h */,
-				50D745B619E74BDD0088C99C /* NSError+Service.m */,
-				50D745B819E8BAA30088C99C /* BGAddShowCollectionViewCell.h */,
-				50D745B919E8BAA30088C99C /* BGAddShowCollectionViewCell.m */,
-				50D745BB19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib */,
-				50D745BD19E8E72F0088C99C /* UIImageView+URL.h */,
-				50D745BE19E8E72F0088C99C /* UIImageView+URL.m */,
-				50D745C219EB7D620088C99C /* BGCollectionViewCell.h */,
-				50D745C319EB7D620088C99C /* BGCollectionViewCell.m */,
+				502F152D19E4F51300F7028C /* BGDummyViewController.h */,
+				502F152E19E4F51300F7028C /* BGDummyViewController.m */,
+				502F153019E4F52900F7028C /* BGDummyViewController.xib */,
 			);
 			path = BoxGuide;
 			sourceTree = "<group>";
@@ -377,13 +462,14 @@
 				502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */,
 				502637EA19E71DEE00B80ADA /* BGService.m in Sources */,
 				502637E419E71B1900B80ADA /* BGShowsService.m in Sources */,
-				50D745B019E738D20088C99C /* NSException+Dev.m in Sources */,
+				50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
 				502637E119E7070000B80ADA /* BGShow.m in Sources */,
 				50D745C419EB7D620088C99C /* BGCollectionViewCell.m in Sources */,
 				50D745BF19E8E72F0088C99C /* UIImageView+URL.m in Sources */,
 				50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */,
 				50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */,
+				50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,
 				50C4D65B19E390C60051F236 /* BGShowsViewController.m in Sources */,

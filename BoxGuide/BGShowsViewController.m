@@ -14,8 +14,8 @@
 @interface BGShowsViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) NSArray *shows;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) BGServicePaginator *popularShowsPaginator;
 
 @end
 
@@ -26,7 +26,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        // TODO: Do something.
+        self.popularShowsPaginator = [[BGShowsService sharedInstance] createPopularShowsPaginator];
     }
     return self;
 }
@@ -47,7 +47,7 @@
     
     [super viewWillAppear:animated];
     
-    [self loadContent];
+    [self loadNextPage];
     
     /*
     NSMutableArray *p = [[NSMutableArray alloc] init];
@@ -61,7 +61,8 @@
 }
 
 - (void)refreshContent {
-    [self loadContent];
+    [self.popularShowsPaginator reset];
+    [self loadNextPage];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -78,17 +79,20 @@
     });
 }
 
-- (void)loadContent {
+- (void)loadNextPage {
     
     __weak typeof(self) weakSelf = self;
-    [[BGShowsService sharedInstance] popularShowsWithSuccessBlock:^(NSArray *shows) {
-        weakSelf.shows = shows;
-        [weakSelf.collectionView reloadData];
-        [weakSelf.refreshControl endRefreshing];
-    } failureBlock:^(NSError *error) {
-        // TODO: Implement this!
-        [weakSelf.refreshControl endRefreshing];
-    }];
+    
+    if (![self.popularShowsPaginator isLoading] && [self.popularShowsPaginator hasMorePages]) {
+        [self.popularShowsPaginator loadNextPageWithSuccessBlock:^(NSArray *pageResults) {
+            [weakSelf.collectionView reloadData]; // TODO: Insert new items instead of reloading everything!
+            [weakSelf.refreshControl endRefreshing];
+        } failureBlock:^(NSError *error) {
+            // TODO: Implement this!
+            NSLog(@"Popular paginator error: %@", [error localizedDescription]);
+            [weakSelf.refreshControl endRefreshing];
+        }];
+    }
 }
 
 - (void)setupCollectionViewLayout {
@@ -103,17 +107,22 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.shows count];
+    return [self.popularShowsPaginator.allResults count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    BGShow *show = self.shows[indexPath.row];
+    BGShow *show = self.popularShowsPaginator.allResults[indexPath.row];
     
     BGAddShowCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BGAddShowCollectionViewCell class]) forIndexPath:indexPath];
     
     cell.name = show.name;
-    cell.posterUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://image.tmdb.org/t/p/w342%@", show.posterPath]];
+    // TODO: Improve this! Do it somewhere else and use prepareCell to reset the cell with default values instead of setting nil.
+    if (show.posterPath) {
+        cell.posterUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://image.tmdb.org/t/p/w342%@", show.posterPath]];
+    } else {
+        cell.posterUrl = nil;
+    }
     
     return cell;
 }
@@ -122,6 +131,20 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (![self.popularShowsPaginator isLoading] && [self.popularShowsPaginator hasMorePages]) {
+        for (NSIndexPath *indexPath in [self.collectionView indexPathsForVisibleItems]) {
+            if (indexPath.item == [self.popularShowsPaginator.allResults count] - 1) {
+                [self loadNextPage];
+                break;
+            }
+        }
+    }
 }
 
 @end

@@ -13,6 +13,6 @@
 
 + (instancetype)sharedInstance;
 
-- (void)popularShowsWithSuccessBlock:(void (^)(NSArray *shows))successBlock failureBlock:(void (^)(NSError *error))failureBlock;
+- (BGServicePaginator *)createPopularShowsPaginator;
 
 @end

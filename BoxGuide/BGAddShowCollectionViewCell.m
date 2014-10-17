@@ -11,19 +11,19 @@
 
 @interface BGAddShowCollectionViewCell ()
 
-@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation BGAddShowCollectionViewCell
 
-- (void)setTitle:(NSString *)title {
-    self.titleLabel.text = title;
+- (void)setName:(NSString *)name {
+    self.nameLabel.text = name;
 }
 
-- (NSString *)title {
-    return self.titleLabel.text;
+- (NSString *)name {
+    return self.nameLabel.text;
 }
 
 - (void)setPosterUrl:(NSURL *)posterUrl {

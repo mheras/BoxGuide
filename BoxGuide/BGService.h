@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BGServicePaginator.h"
 
 extern NSString * const kAPIKey;
 
