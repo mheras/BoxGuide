@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 HSoft. All rights reserved.
 //
 
-#import "BGViewController.h"
+#import "BGContentViewController.h"
 
-@interface BGDummyViewController : BGViewController
+@interface BGDummyViewController : BGContentViewController
 
 @end

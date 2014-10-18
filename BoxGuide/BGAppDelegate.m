@@ -18,17 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    BGRootMenuViewController *rootMenuViewController = [[BGRootMenuViewController alloc] init];
-
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:[rootMenuViewController defaultViewController] leftMenuViewController:rootMenuViewController rightMenuViewController:nil];
-    sideMenuViewController.contentViewScaleValue = 0.9;
-    sideMenuViewController.bouncesHorizontally = NO;
-    sideMenuViewController.menuPreferredStatusBarStyle = UIStatusBarStyleLightContent;
-    sideMenuViewController.view.backgroundColor = [UIColor darkGrayColor];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = sideMenuViewController;
-    [self.window makeKeyAndVisible];
+    [self setupLookAndFeel];
+    [self buildMenu];
 
     return YES;
 }
@@ -53,6 +44,34 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)buildMenu {
+    BGRootMenuViewController *rootMenuViewController = [[BGRootMenuViewController alloc] init];
+    
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:[rootMenuViewController defaultViewController] leftMenuViewController:rootMenuViewController rightMenuViewController:nil];
+    
+    sideMenuViewController.contentViewScaleValue = 0.85;
+    sideMenuViewController.bouncesHorizontally = NO;
+    sideMenuViewController.menuPreferredStatusBarStyle = UIStatusBarStyleLightContent;
+    sideMenuViewController.view.backgroundColor = [UIColor darkGrayColor];
+    sideMenuViewController.contentViewShadowEnabled = YES;
+    sideMenuViewController.scaleMenuView = NO;
+    
+    // TODO: Fix this...
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    sideMenuViewController.contentViewInPortraitOffsetCenterX = 80.0f - (UIInterfaceOrientationIsPortrait(orientation) ? CGRectGetWidth([UIScreen mainScreen].bounds) : CGRectGetHeight([UIScreen mainScreen].bounds)) / 2.0f;
+    sideMenuViewController.contentViewInLandscapeOffsetCenterX = 80.0f - (UIInterfaceOrientationIsPortrait(orientation) ? CGRectGetHeight([UIScreen mainScreen].bounds) : CGRectGetWidth([UIScreen mainScreen].bounds)) / 2.0f;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = sideMenuViewController;
+    [self.window makeKeyAndVisible];
+}
+
+- (void)setupLookAndFeel {
+    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:1 green:0.227 blue:0.176 alpha:1];
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].barStyle = UIBarStyleBlackOpaque;
 }
 
 @end

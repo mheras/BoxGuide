@@ -47,6 +47,8 @@
     
     [super viewWillAppear:animated];
     
+    // TODO: In larger devices, the first page comes with less items than those that could cover the whole screen. Load more pages to prevent this.
+    
     [self loadNextPage];
     
     /*
