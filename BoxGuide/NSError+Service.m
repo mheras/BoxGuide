@@ -11,15 +11,15 @@
 
 @implementation NSError (Service)
 
-- (BGServiceError *)serviceError {
+- (BGServiceError *)bg_serviceError {
     return [self.userInfo[RKObjectMapperErrorObjectsKey] firstObject];
 }
 
-- (BOOL)isCancellationError {
+- (BOOL)bg_isCancellationError {
     return [self.domain isEqualToString:NSURLErrorDomain] && self.code == NSURLErrorCancelled;
 }
 
-- (BOOL)isConnectionError {
+- (BOOL)bg_isConnectionError {
     return [self.domain isEqualToString:NSURLErrorDomain] && self.code != NSURLErrorCancelled;
 }
 

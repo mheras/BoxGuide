@@ -8,6 +8,8 @@
 
 #import "BGViewController.h"
 
+extern const CGFloat kRootMenuWidth;
+
 @interface BGRootMenuViewController : BGViewController
 
 - (UIViewController *)defaultViewController;

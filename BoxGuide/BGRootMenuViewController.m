@@ -10,7 +10,9 @@
 #import "BGRootMenuTableViewCell.h"
 #import "BGDummyViewController.h" // TODO: Remove it.
 #import "BGShowsViewController.h" // TODO: Remove it.
-#import <RESideMenu.h>
+#import <MMDrawerController/UIViewController+MMDrawerController.h>
+
+const CGFloat kRootMenuWidth = 150.0f;
 
 static NSString * const kOptionShowsKey = @"Shows";
 static NSString * const kOptionListsKey = @"Lists";
@@ -42,9 +44,13 @@ static NSString * const kOptionHelpKey = @"Help";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BGRootMenuTableViewCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([BGRootMenuTableViewCell class])];
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (UIViewController *)defaultViewController {
@@ -67,15 +73,20 @@ static NSString * const kOptionHelpKey = @"Help";
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [indexPath isEqual:[self.tableView indexPathForSelectedRow]] ? nil : indexPath;
+    
+    if ([indexPath isEqual:[self.tableView indexPathForSelectedRow]]) {
+        [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
+        return nil;
+    }
+    return indexPath;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     BGViewController *viewController = self.viewControllerPerOption[self.optionsPerSection[indexPath.section][indexPath.row]];
     UINavigationController *contentNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    [self.sideMenuViewController setContentViewController:contentNavigationController animated:YES];
-    [self.sideMenuViewController hideMenuViewController];
+    
+    [self.mm_drawerController setCenterViewController:contentNavigationController withCloseAnimation:YES completion:nil];
 }
 
 @end

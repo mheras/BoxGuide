@@ -7,8 +7,10 @@
 //
 
 #import "BGAppDelegate.h"
-#import <RESideMenu.h>
 #import "BGRootMenuViewController.h"
+#import "UIColor+BoxGuide.h"
+#import <MMDrawerController/MMDrawerController.h>
+#import <MMDrawerController/MMDrawerVisualState.h>
 
 @interface BGAppDelegate ()
 
@@ -47,31 +49,34 @@
 }
 
 - (void)buildMenu {
+    
     BGRootMenuViewController *rootMenuViewController = [[BGRootMenuViewController alloc] init];
     
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:[rootMenuViewController defaultViewController] leftMenuViewController:rootMenuViewController rightMenuViewController:nil];
+    MMDrawerController *drawerController = [[MMDrawerController alloc] initWithCenterViewController:[rootMenuViewController defaultViewController] leftDrawerViewController:rootMenuViewController];
     
-    sideMenuViewController.contentViewScaleValue = 0.85;
-    sideMenuViewController.bouncesHorizontally = NO;
-    sideMenuViewController.menuPreferredStatusBarStyle = UIStatusBarStyleLightContent;
-    sideMenuViewController.view.backgroundColor = [UIColor darkGrayColor];
-    sideMenuViewController.contentViewShadowEnabled = YES;
-    sideMenuViewController.scaleMenuView = NO;
+    [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:20]]; // TODO: Magic number.
     
-    // TODO: Fix this...
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    sideMenuViewController.contentViewInPortraitOffsetCenterX = 80.0f - (UIInterfaceOrientationIsPortrait(orientation) ? CGRectGetWidth([UIScreen mainScreen].bounds) : CGRectGetHeight([UIScreen mainScreen].bounds)) / 2.0f;
-    sideMenuViewController.contentViewInLandscapeOffsetCenterX = 80.0f - (UIInterfaceOrientationIsPortrait(orientation) ? CGRectGetHeight([UIScreen mainScreen].bounds) : CGRectGetWidth([UIScreen mainScreen].bounds)) / 2.0f;
+    drawerController.centerHiddenInteractionMode = MMDrawerOpenCenterInteractionModeNone;
+    drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView;
+    drawerController.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll; // TODO: Panning from screen edge may conflict with navigation stack back gesture.
+    
+    drawerController.shouldStretchDrawer = NO;
+    
+    drawerController.maximumLeftDrawerWidth = kRootMenuWidth;
+    
+    drawerController.showsStatusBarBackgroundView = YES;
+    drawerController.statusBarViewBackgroundColor = [UIColor bg_topBarColor];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = sideMenuViewController;
+    self.window.rootViewController = drawerController;
     [self.window makeKeyAndVisible];
 }
 
 - (void)setupLookAndFeel {
-    [UINavigationBar appearance].barTintColor = [UIColor colorWithRed:1 green:0.227 blue:0.176 alpha:1];
+    [UINavigationBar appearance].barTintColor = [UIColor bg_topBarColor];
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlackOpaque;
+    [UINavigationBar appearance].translucent = NO;
 }
 
 @end

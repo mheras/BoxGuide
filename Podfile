@@ -3,7 +3,7 @@ platform :ios, '7.0'
 
 inhibit_all_warnings!
 
-pod 'RESideMenu', '4.0.7'
+pod 'MMDrawerController', '0.5.7'
 pod 'RestKit', '0.23.3'
 pod 'BlocksKit', '2.2.5'
 pod 'CrashlyticsFramework', '2.2.4'

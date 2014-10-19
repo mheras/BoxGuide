@@ -11,9 +11,9 @@
 
 @interface NSError (Service)
 
-@property (nonatomic, strong, readonly) BGServiceError *serviceError;
+@property (nonatomic, strong, readonly) BGServiceError *bg_serviceError;
 
-@property (nonatomic, assign, readonly, getter = isCancellationError) BOOL cancellationError;
-@property (nonatomic, assign, readonly, getter = isConnectionError) BOOL connectionError;
+@property (nonatomic, assign, readonly, getter = bg_isCancellationError) BOOL bg_cancellationError;
+@property (nonatomic, assign, readonly, getter = bg_isConnectionError) BOOL bg_connectionError;
 
 @end
