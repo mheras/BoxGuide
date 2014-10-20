@@ -54,7 +54,8 @@
     
     MMDrawerController *drawerController = [[MMDrawerController alloc] initWithCenterViewController:[rootMenuViewController defaultViewController] leftDrawerViewController:rootMenuViewController];
     
-    [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:20]]; // TODO: Magic number.
+    drawerController.animationVelocity /= 2;
+    [drawerController setDrawerVisualStateBlock:[MMDrawerVisualState swingingDoorVisualStateBlock]];
     
     drawerController.centerHiddenInteractionMode = MMDrawerOpenCenterInteractionModeNone;
     drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeBezelPanningCenterView;

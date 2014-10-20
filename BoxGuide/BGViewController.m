@@ -14,8 +14,4 @@
 
 @implementation BGViewController
 
-- (BOOL)prefersStatusBarHidden {
-    return NO;
-}
-
 @end

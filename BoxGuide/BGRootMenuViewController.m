@@ -44,15 +44,20 @@ static NSString * const kOptionHelpKey = @"RootMenu.Options.Help";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BGRootMenuTableViewCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([BGRootMenuTableViewCell class])];
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+}
+
+- (void)viewWillLayoutSubviews {
+    
+    [super viewWillLayoutSubviews];
     
     CGFloat statusBarHeight = MIN(CGRectGetHeight([UIApplication sharedApplication].statusBarFrame), CGRectGetWidth([UIApplication sharedApplication].statusBarFrame));
     
     UIEdgeInsets insets = UIEdgeInsetsMake(statusBarHeight, 0.0f, 0.0f, 0.0f);
     self.tableView.contentInset = insets;
     self.tableView.scrollIndicatorInsets = insets;
-
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BGRootMenuTableViewCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:NSStringFromClass([BGRootMenuTableViewCell class])];
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
