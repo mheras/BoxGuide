@@ -12,8 +12,10 @@
 
 + (UIColor *)bg_topBarColor;
 
-+ (UIColor *)bg_colorWithHexString:(NSString *)hexString;
++ (UIColor *)bg_rootMenuOptionDeselectedColor;
 
-+ (NSString *)bg_hexValuesFromUIColor:(UIColor *)color;
++ (UIColor *)bg_rootMenuOptionSelectedColor;
+
++ (UIColor *)bg_contentBackgroundColor;
 
 @end

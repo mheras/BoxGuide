@@ -64,9 +64,6 @@
     
     drawerController.maximumLeftDrawerWidth = kRootMenuWidth;
     
-    drawerController.showsStatusBarBackgroundView = YES;
-    drawerController.statusBarViewBackgroundColor = [UIColor bg_topBarColor];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = drawerController;
     [self.window makeKeyAndVisible];

@@ -7,77 +7,24 @@
 //
 
 #import "UIColor+BoxGuide.h"
+#import "UIColor+Additions.h"
 
 @implementation UIColor (BoxGuide)
 
 + (UIColor *)bg_topBarColor {
-    return [UIColor bg_colorWithHexString:@"FF3A2D"];
+    return [UIColor colorWithRed:0.169f green:0.184f blue:0.196f alpha:1.00f];
 }
 
-+ (UIColor *)bg_colorWithHexString:(NSString *)hexString {
-    
-    if ([hexString length] != 6) {
-        return nil;
-    }
-    
-    // Brutal and not-very elegant test for non hex-numeric characters.
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[^a-fA-F|0-9]" options:0 error:NULL];
-    NSUInteger match = [regex numberOfMatchesInString:hexString options:NSMatchingReportCompletion range:NSMakeRange(0, [hexString length])];
-    
-    if (match != 0) {
-        return nil;
-    }
-    
-    NSRange rRange = NSMakeRange(0, 2);
-    NSString *rComponent = [hexString substringWithRange:rRange];
-    NSUInteger rVal = 0;
-    NSScanner *rScanner = [NSScanner scannerWithString:rComponent];
-    [rScanner scanHexInt:&rVal];
-    float rRetVal = (float)rVal / 254;
-    
-    
-    NSRange gRange = NSMakeRange(2, 2);
-    NSString *gComponent = [hexString substringWithRange:gRange];
-    NSUInteger gVal = 0;
-    NSScanner *gScanner = [NSScanner scannerWithString:gComponent];
-    [gScanner scanHexInt:&gVal];
-    float gRetVal = (float)gVal / 254;
-    
-    NSRange bRange = NSMakeRange(4, 2);
-    NSString *bComponent = [hexString substringWithRange:bRange];
-    NSUInteger bVal = 0;
-    NSScanner *bScanner = [NSScanner scannerWithString:bComponent];
-    [bScanner scanHexInt:&bVal];
-    float bRetVal = (float)bVal / 254;
-    
-    return [UIColor colorWithRed:rRetVal green:gRetVal blue:bRetVal alpha:1.0f];
++ (UIColor *)bg_rootMenuOptionSelectedColor {
+    return [UIColor colorWithRed:0.455f green:0.749f blue:0.918f alpha:1.00f];
 }
 
-+ (NSString *)bg_hexValuesFromUIColor:(UIColor *)color {
-    
-    if (!color) {
-        return nil;
-    }
-    
-    if (color == [UIColor whiteColor]) {
-        // Special case, as white doesn't fall into the RGB color space.
-        return @"ffffff";
-    }
-    
-    CGFloat red;
-    CGFloat blue;
-    CGFloat green;
-    CGFloat alpha;
-    
-    [color getRed:&red green:&green blue:&blue alpha:&alpha];
-    
-    int redDec = (int)(red * 255);
-    int greenDec = (int)(green * 255);
-    int blueDec = (int)(blue * 255);
-    
-    NSString *returnString = [NSString stringWithFormat:@"%02x%02x%02x", (unsigned int)redDec, (unsigned int)greenDec, (unsigned int)blueDec];
-    
-    return returnString;
++ (UIColor *)bg_rootMenuOptionDeselectedColor {
+    return [UIColor colorWithWhite:0.8f alpha:1.0f];
+}
+
++ (UIColor *)bg_contentBackgroundColor {
+    return [UIColor colorWithRed:0.255f green:0.271f blue:0.286f alpha:1.00f];
 }
 
 @end

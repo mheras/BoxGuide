@@ -14,7 +14,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.layer.frame = self.bounds;
+        [self setupDefault];
     }
     return self;
 }
@@ -22,13 +22,18 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.frame = self.bounds;
+        [self setupDefault];
     }
     return self;
 }
 
 + (Class)layerClass {
     return [CAGradientLayer class];
+}
+
+- (void)setupDefault {
+    self.layer.frame = self.bounds;
+    self.backgroundColor = [UIColor bg_contentBackgroundColor];
 }
 
 - (void)setupGradientLayer {
