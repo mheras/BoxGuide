@@ -14,12 +14,12 @@
 
 const CGFloat kRootMenuWidth = 150.0f;
 
-static NSString * const kOptionShowsKey = @"Shows";
-static NSString * const kOptionListsKey = @"Lists";
-static NSString * const kOptionMoviesKey = @"Movies";
-static NSString * const kOptionStatisticsKey = @"Statistics";
-static NSString * const kOptionConfigurationKey = @"Configuration";
-static NSString * const kOptionHelpKey = @"Help";
+static NSString * const kOptionShowsKey = @"RootMenu.Options.Show";
+static NSString * const kOptionListsKey = @"RootMenu.Options.Lists";
+static NSString * const kOptionMoviesKey = @"RootMenu.Options.Movies";
+static NSString * const kOptionStatisticsKey = @"RootMenu.Options.Statistics";
+static NSString * const kOptionConfigurationKey = @"RootMenu.Options.Configuration";
+static NSString * const kOptionHelpKey = @"RootMenu.Options.Help";
 
 @interface BGRootMenuViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -68,7 +68,7 @@ static NSString * const kOptionHelpKey = @"Help";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     BGTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([BGRootMenuTableViewCell class])];
-    cell.textLabel.text = self.optionsPerSection[indexPath.section][indexPath.row]; // TODO: I18N
+    cell.textLabel.text = NSLocalizedString(self.optionsPerSection[indexPath.section][indexPath.row], nil);
     return cell;
 }
 

@@ -18,6 +18,7 @@
 		506C71BD19F2C5AD006ACC5E /* BGGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 506C71BC19F2C5AD006ACC5E /* BGGradientView.m */; };
 		50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F4D19F07E3B006E3E05 /* BGServicePaginator.m */; };
 		50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */; };
+		509E282919F48EFF001F5CEA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 509E282B19F48EFF001F5CEA /* Localizable.strings */; };
 		50AB1AF919DCDB2400ABFF4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AF819DCDB2400ABFF4E /* main.m */; };
 		50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AFB19DCDB2400ABFF4E /* BGAppDelegate.m */; };
 		50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AB1B0319DCDB2400ABFF4E /* Images.xcassets */; };
@@ -71,6 +72,8 @@
 		50783F4D19F07E3B006E3E05 /* BGServicePaginator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGServicePaginator.m; sourceTree = "<group>"; };
 		50783F4F19F089F6006E3E05 /* RKObjectManager+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RKObjectManager+Additions.h"; sourceTree = "<group>"; };
 		50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RKObjectManager+Additions.m"; sourceTree = "<group>"; };
+		509E282A19F48EFF001F5CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		509E282C19F48F15001F5CEA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50AB1AF319DCDB2400ABFF4E /* BoxGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AB1AF719DCDB2400ABFF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50AB1AF819DCDB2400ABFF4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -280,6 +283,7 @@
 				502F152D19E4F51300F7028C /* BGDummyViewController.h */,
 				502F152E19E4F51300F7028C /* BGDummyViewController.m */,
 				502F153019E4F52900F7028C /* BGDummyViewController.xib */,
+				509E282B19F48EFF001F5CEA /* Localizable.strings */,
 			);
 			path = BoxGuide;
 			sourceTree = "<group>";
@@ -400,6 +404,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 50AB1AEA19DCDB2400ABFF4E;
 			productRefGroup = 50AB1AF419DCDB2400ABFF4E /* Products */;
@@ -422,6 +427,7 @@
 				502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */,
 				50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */,
 				502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */,
+				509E282919F48EFF001F5CEA /* Localizable.strings in Resources */,
 				50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */,
 				50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */,
 			);
@@ -515,6 +521,18 @@
 			targetProxy = 50AB1B0D19DCDB2400ABFF4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		509E282B19F48EFF001F5CEA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				509E282A19F48EFF001F5CEA /* Base */,
+				509E282C19F48F15001F5CEA /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		50AB1B1419DCDB2400ABFF4E /* Debug */ = {

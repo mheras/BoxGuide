@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  BoxGuide
+
+  Created by Martin Heras on 10/19/14.
+  Copyright (c) 2014 HSoft. All rights reserved.
+*/
+
+"RootMenu.Options.Show" = "TV Shows";
+"RootMenu.Options.Lists" = "Lists";
+"RootMenu.Options.Movies" = "Movies";
+"RootMenu.Options.Statistics" = "Statistics";
+"RootMenu.Options.Configuration" = "Configuration";
+"RootMenu.Options.Help" = "Help";
