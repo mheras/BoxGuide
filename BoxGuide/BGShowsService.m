@@ -42,7 +42,7 @@
 }
 
 - (BGServicePaginator *)createPopularShowsPaginator {
-    return [[BGServicePaginator alloc] initWithManager:self.manager resultsMapping:[self showMapping] path:@"/3/tv/popular" parameters:@{@"api_key" : kAPIKey}];
+    return [[BGServicePaginator alloc] initWithManager:self.manager objectMapping:[self showMapping] path:@"/3/tv/popular" parameters:@{@"api_key" : kAPIKey} cacheKey:@"CACHEKEY"]; // TODO: Cache key!
 }
 
 @end

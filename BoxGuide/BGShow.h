@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BGModel.h"
 
-@interface BGShow : NSObject
+@interface BGShow : BGModel
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *posterPath;

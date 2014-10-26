@@ -15,6 +15,7 @@
 		502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */; };
 		502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152E19E4F51300F7028C /* BGDummyViewController.m */; };
 		502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F153019E4F52900F7028C /* BGDummyViewController.xib */; };
+		505525FA19FD389100DC6616 /* BGPaginatorCollectionViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 505525F919FD389100DC6616 /* BGPaginatorCollectionViewHandler.m */; };
 		506C71BD19F2C5AD006ACC5E /* BGGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 506C71BC19F2C5AD006ACC5E /* BGGradientView.m */; };
 		50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F4D19F07E3B006E3E05 /* BGServicePaginator.m */; };
 		50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */; };
@@ -38,6 +39,7 @@
 		50D745C419EB7D620088C99C /* BGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745C319EB7D620088C99C /* BGCollectionViewCell.m */; };
 		50F7770C19F4775000B3CE7A /* UIColor+BoxGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F7770B19F4775000B3CE7A /* UIColor+BoxGuide.m */; };
 		50F952F519F2337000F02295 /* BGContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F952F419F2337000F02295 /* BGContentViewController.m */; };
+		50F9F05719FDAA5E00C166CA /* BGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F9F05619FDAA5E00C166CA /* BGModel.m */; };
 		AF5F1C887FF376C63A605715 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BB300E1A651F60EA343B50 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,9 @@
 		502F152D19E4F51300F7028C /* BGDummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGDummyViewController.h; sourceTree = "<group>"; };
 		502F152E19E4F51300F7028C /* BGDummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGDummyViewController.m; sourceTree = "<group>"; };
 		502F153019E4F52900F7028C /* BGDummyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGDummyViewController.xib; sourceTree = "<group>"; };
+		505525F719FD37A600DC6616 /* BGPaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGPaginator.h; sourceTree = "<group>"; };
+		505525F819FD389100DC6616 /* BGPaginatorCollectionViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGPaginatorCollectionViewHandler.h; sourceTree = "<group>"; };
+		505525F919FD389100DC6616 /* BGPaginatorCollectionViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGPaginatorCollectionViewHandler.m; sourceTree = "<group>"; };
 		506C71BB19F2C5AD006ACC5E /* BGGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGradientView.h; sourceTree = "<group>"; };
 		506C71BC19F2C5AD006ACC5E /* BGGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGradientView.m; sourceTree = "<group>"; };
 		50783F4C19F07E3B006E3E05 /* BGServicePaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGServicePaginator.h; sourceTree = "<group>"; };
@@ -111,6 +116,8 @@
 		50F7770B19F4775000B3CE7A /* UIColor+BoxGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BoxGuide.m"; sourceTree = "<group>"; };
 		50F952F319F2337000F02295 /* BGContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGContentViewController.h; sourceTree = "<group>"; };
 		50F952F419F2337000F02295 /* BGContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGContentViewController.m; sourceTree = "<group>"; };
+		50F9F05519FDAA5E00C166CA /* BGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGModel.h; sourceTree = "<group>"; };
+		50F9F05619FDAA5E00C166CA /* BGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGModel.m; sourceTree = "<group>"; };
 		8BBE96D43D6026F604F89F3E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F2BB300E1A651F60EA343B50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -181,10 +188,14 @@
 		50783F4219F07C4B006E3E05 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				50F9F05419FDAA5100C166CA /* Model */,
 				50783F4519F07CD7006E3E05 /* Views */,
 				50783F4419F07C80006E3E05 /* View Controllers */,
 				50783F4119F07C45006E3E05 /* Services */,
 				50783F4619F07D1B006E3E05 /* Misc */,
+				505525F719FD37A600DC6616 /* BGPaginator.h */,
+				505525F819FD389100DC6616 /* BGPaginatorCollectionViewHandler.h */,
+				505525F919FD389100DC6616 /* BGPaginatorCollectionViewHandler.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -325,6 +336,15 @@
 				50D745A919E506510088C99C /* FontAwesome.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		50F9F05419FDAA5100C166CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50F9F05519FDAA5E00C166CA /* BGModel.h */,
+				50F9F05619FDAA5E00C166CA /* BGModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		6A9A4757BA15A59CB25F14DC /* Pods */ = {
@@ -491,6 +511,7 @@
 				502637EA19E71DEE00B80ADA /* BGService.m in Sources */,
 				502637E419E71B1900B80ADA /* BGShowsService.m in Sources */,
 				50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */,
+				505525FA19FD389100DC6616 /* BGPaginatorCollectionViewHandler.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
 				502637E119E7070000B80ADA /* BGShow.m in Sources */,
 				506C71BD19F2C5AD006ACC5E /* BGGradientView.m in Sources */,
@@ -498,6 +519,7 @@
 				50D745BF19E8E72F0088C99C /* UIImageView+URL.m in Sources */,
 				50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */,
 				50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */,
+				50F9F05719FDAA5E00C166CA /* BGModel.m in Sources */,
 				509E282F19F4A90F001F5CEA /* UIColor+Additions.m in Sources */,
 				50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,

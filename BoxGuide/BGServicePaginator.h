@@ -7,23 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BGPaginator.h"
 
 @class RKObjectManager;
 @class RKMapping;
 
-@interface BGServicePaginator : NSObject
+/**
+ * A paginator that loads its objects from a service.
+ */
+@interface BGServicePaginator : NSObject <BGPaginator>
 
-@property (nonatomic, strong, readonly) NSArray *allResults;
-@property (nonatomic, assign, readonly) NSInteger totalPages;
-@property (nonatomic, assign, readonly) NSInteger totalResults;
-@property (nonatomic, assign, readonly) NSInteger loadedPages;
-@property (nonatomic, assign, readonly, getter = isLoading) BOOL loading;
-
-- (id)initWithManager:(RKObjectManager *)manager resultsMapping:(RKMapping *)resultsMapping path:(NSString *)path parameters:(NSDictionary *)parameters;
-
-- (void)loadNextPageWithSuccessBlock:(void (^)(NSArray *pageResults))successBlock failureBlock:(void (^)(NSError *error))failureBlock;
-- (BOOL)hasMorePages;
-- (void)reset;
-- (void)cancel;
+/**
+ * Instantiates a new paginator.
+ *
+ * @param manager The manager to be used to make the requests.
+ * @param objectMapping The mapping for the objects being paginated.
+ * @param path The relative path for this resource.
+ * @param parameters The parameters to add as part of the query string in the requests.
+ * @param cacheKey The cache key to be used by this paginator to cache the objects. If nil is provided, no cache is used.
+ */
+- (id)initWithManager:(RKObjectManager *)manager objectMapping:(RKMapping *)objectMapping path:(NSString *)path parameters:(NSDictionary *)parameters cacheKey:(NSString *)cacheKey;
 
 @end
