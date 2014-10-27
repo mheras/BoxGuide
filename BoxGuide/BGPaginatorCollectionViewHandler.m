@@ -9,6 +9,7 @@
 #import "BGPaginatorCollectionViewHandler.h"
 #import "BGCollectionViewCell.h"
 #import "BGPaginator.h"
+#import <SpinKit/RTSpinKitView.h>
 
 @interface BGPaginatorCollectionViewHandler ()
 
@@ -17,6 +18,8 @@
 @property (nonatomic, strong) NSMutableArray *loadedObjects;
 @property (nonatomic, copy) void (^updateCellBlock)(BGCollectionViewCell *cell, id object);
 @property (nonatomic, copy) NSString *cellClassName;
+
+@property (nonatomic, strong) RTSpinKitView *spinner;
 
 @end
 
@@ -36,9 +39,49 @@
         
         [self.collectionView registerNib:[UINib nibWithNibName:self.cellClassName bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:self.cellClassName];
         
-        [self loadMore];
+        [self setupCollectionViewForPagination];
     }
     return self;
+}
+
+- (void)setupCollectionViewForPagination {
+    
+    // Make it always bounce vertically, so that the refresh control works even when
+    // the displayed items don't cover the whole screen.
+    self.collectionView.alwaysBounceVertical = YES;
+
+    // Make it transparent so that we can display the spinner.
+    self.collectionView.alpha = 0.0f;
+    
+    /*
+     
+     RTSpinKitViewStylePlane,
+     RTSpinKitViewStyleCircleFlip,
+     RTSpinKitViewStyleBounce, ##
+     RTSpinKitViewStyleWave, ##
+     RTSpinKitViewStyleWanderingCubes,
+     RTSpinKitViewStylePulse,
+     RTSpinKitViewStyleChasingDots,
+     RTSpinKitViewStyleThreeBounce, ## perfecto para el paginado de footer
+     RTSpinKitViewStyleCircle, ## es como un refresh comun, pero mejor animado. puede ir para el main.
+     RTSpinKitViewStyle9CubeGrid,
+     RTSpinKitViewStyleWordPress,
+     RTSpinKitViewStyleFadingCircle,
+     RTSpinKitViewStyleFadingCircleAlt, ## similar al Circle
+     RTSpinKitViewStyleArc, ## circulo casi completo
+     RTSpinKitViewStyleArcAlt
+     
+     */
+    
+    self.spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleWave];
+    self.spinner.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.collectionView.superview addSubview:self.spinner];
+    
+    [self.collectionView.superview addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.collectionView attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
+    [self.collectionView.superview addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.collectionView attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f]];
+    
+    [self loadMore];
 }
 
 - (void)loadMore {
@@ -59,8 +102,15 @@
             [weakSelf.collectionView performBatchUpdates:^{
                 [weakSelf.collectionView insertItemsAtIndexPaths:indexPathsToInsert];
             } completion:^(BOOL finished) {
-                if ([weakSelf isLastObjectVisible]) {
+                if ([weakSelf isLastObjectVisible] && [weakSelf.paginator hasMorePages]) {
                     [weakSelf loadMore];
+                } else {
+                    [UIView animateWithDuration:0.3 animations:^{
+                        weakSelf.spinner.alpha = 0.0f;
+                        weakSelf.collectionView.alpha = 1.0f;
+                    } completion:^(BOOL finished) {
+                        [weakSelf.spinner removeFromSuperview];
+                    }];
                 }
             }];
             
