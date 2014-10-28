@@ -11,6 +11,29 @@
 #import "BGPaginator.h"
 #import <SpinKit/RTSpinKitView.h>
 
+@interface BGPaginatorCollectionViewFooter : UICollectionReusableView
+@end
+
+@implementation BGPaginatorCollectionViewFooter
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        self.clipsToBounds = YES;
+        
+        RTSpinKitView *spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleThreeBounce];
+        [self addSubview:spinner];
+        
+        spinner.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:spinner attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:spinner attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f]];
+    }
+    return self;
+}
+
+@end
+
 @interface BGPaginatorCollectionViewHandler ()
 
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -38,6 +61,7 @@
         NSAssert([NSClassFromString(cellClassName) isSubclassOfClass:[BGCollectionViewCell class]], @"The given cell class name does not correspond to a subclass of BGCollectionViewCell");
         
         [self.collectionView registerNib:[UINib nibWithNibName:self.cellClassName bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:self.cellClassName];
+        [self.collectionView registerClass:[BGPaginatorCollectionViewFooter class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([BGPaginatorCollectionViewFooter class])];
         
         [self setupCollectionViewForPagination];
     }
@@ -53,27 +77,9 @@
     // Make it transparent so that we can display the spinner.
     self.collectionView.alpha = 0.0f;
     
-    /*
-     
-     RTSpinKitViewStylePlane,
-     RTSpinKitViewStyleCircleFlip,
-     RTSpinKitViewStyleBounce, ##
-     RTSpinKitViewStyleWave, ##
-     RTSpinKitViewStyleWanderingCubes,
-     RTSpinKitViewStylePulse,
-     RTSpinKitViewStyleChasingDots,
-     RTSpinKitViewStyleThreeBounce, ## perfecto para el paginado de footer
-     RTSpinKitViewStyleCircle, ## es como un refresh comun, pero mejor animado. puede ir para el main.
-     RTSpinKitViewStyle9CubeGrid,
-     RTSpinKitViewStyleWordPress,
-     RTSpinKitViewStyleFadingCircle,
-     RTSpinKitViewStyleFadingCircleAlt, ## similar al Circle
-     RTSpinKitViewStyleArc, ## circulo casi completo
-     RTSpinKitViewStyleArcAlt
-     
-     */
+    [self enableFooter:YES];
     
-    self.spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleWave];
+    self.spinner = [[RTSpinKitView alloc] initWithStyle:RTSpinKitViewStyleCircle];
     self.spinner.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.collectionView.superview addSubview:self.spinner];
@@ -82,6 +88,10 @@
     [self.collectionView.superview addConstraint:[NSLayoutConstraint constraintWithItem:self.spinner attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.collectionView attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f]];
     
     [self loadMore];
+}
+
+- (void)enableFooter:(BOOL)enable {
+    ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).footerReferenceSize = CGSizeMake(0.0f, enable ? 20.0f : 0.0f);
 }
 
 - (void)loadMore {
@@ -102,7 +112,8 @@
             [weakSelf.collectionView performBatchUpdates:^{
                 [weakSelf.collectionView insertItemsAtIndexPaths:indexPathsToInsert];
             } completion:^(BOOL finished) {
-                if ([weakSelf isLastObjectVisible] && [weakSelf.paginator hasMorePages]) {
+                [weakSelf enableFooter:[weakSelf.paginator hasMorePages]];
+                if ([weakSelf.paginator hasMorePages] && [weakSelf isLastObjectVisible]) {
                     [weakSelf loadMore];
                 } else {
                     [UIView animateWithDuration:0.3 animations:^{
@@ -142,15 +153,24 @@
     if (self.updateCellBlock != nil) {
         self.updateCellBlock(cell, object);
     }
+
+    // Since the method - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath is only available on iOS 8+, we need to do this ugly hack. We cannot simply use the method - (void)scrollViewDidScroll:(UIScrollView *)scrollView as it is not triggered when the orientation changes (it might be case that the last cell becomes visible upon rotation). And also, since we are doing this in this method (and we are not supposed to do it), we need to delay its execution.
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (indexPath.item == weakSelf.loadedObjects.count - 1 && ![weakSelf.paginator isLoading] && [weakSelf.paginator hasMorePages]) {
+            [weakSelf loadMore];
+        }
+    });
+
     return cell;
 }
 
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (![self.paginator isLoading] && [self.paginator hasMorePages] && [self isLastObjectVisible]) {
-        [self loadMore];
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+        return [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([BGPaginatorCollectionViewFooter class]) forIndexPath:indexPath];
     }
+    return nil;
 }
 
 @end
