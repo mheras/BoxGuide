@@ -28,8 +28,8 @@
 		50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65219E38F290051F236 /* BGViewController.m */; };
 		50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65519E38F570051F236 /* BGRootMenuViewController.m */; };
 		50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */; };
-		50C4D65B19E390C60051F236 /* BGShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65A19E390C60051F236 /* BGShowsViewController.m */; };
-		50C4D65D19E392260051F236 /* BGShowsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65C19E392260051F236 /* BGShowsViewController.xib */; };
+		50C4D65B19E390C60051F236 /* BGShowsAddPopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65A19E390C60051F236 /* BGShowsAddPopularViewController.m */; };
+		50C4D65D19E392260051F236 /* BGShowsAddPopularViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65C19E392260051F236 /* BGShowsAddPopularViewController.xib */; };
 		50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50D745A919E506510088C99C /* FontAwesome.ttf */; };
 		50D745B419E73F7F0088C99C /* BGServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B319E73F7F0088C99C /* BGServiceError.m */; };
 		50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745B619E74BDD0088C99C /* NSError+Service.m */; };
@@ -37,6 +37,9 @@
 		50D745BC19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D745BB19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib */; };
 		50D745BF19E8E72F0088C99C /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745BE19E8E72F0088C99C /* UIImageView+URL.m */; };
 		50D745C419EB7D620088C99C /* BGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D745C319EB7D620088C99C /* BGCollectionViewCell.m */; };
+		50EF38AD1A004F1900CC4294 /* BGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EF38AC1A004F1900CC4294 /* BGTabBarController.m */; };
+		50EF38B71A0334E200CC4294 /* BGShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EF38B51A0334E200CC4294 /* BGShowsViewController.m */; };
+		50EF38B81A0334E200CC4294 /* BGShowsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50EF38B61A0334E200CC4294 /* BGShowsViewController.xib */; };
 		50F7770C19F4775000B3CE7A /* UIColor+BoxGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F7770B19F4775000B3CE7A /* UIColor+BoxGuide.m */; };
 		50F952F519F2337000F02295 /* BGContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F952F419F2337000F02295 /* BGContentViewController.m */; };
 		50F9F05719FDAA5E00C166CA /* BGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F9F05619FDAA5E00C166CA /* BGModel.m */; };
@@ -96,9 +99,9 @@
 		50C4D65419E38F560051F236 /* BGRootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGRootMenuViewController.h; sourceTree = "<group>"; };
 		50C4D65519E38F570051F236 /* BGRootMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGRootMenuViewController.m; sourceTree = "<group>"; };
 		50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGRootMenuViewController.xib; sourceTree = "<group>"; };
-		50C4D65919E390C60051F236 /* BGShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShowsViewController.h; sourceTree = "<group>"; };
-		50C4D65A19E390C60051F236 /* BGShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsViewController.m; sourceTree = "<group>"; };
-		50C4D65C19E392260051F236 /* BGShowsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGShowsViewController.xib; sourceTree = "<group>"; };
+		50C4D65919E390C60051F236 /* BGShowsAddPopularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShowsAddPopularViewController.h; sourceTree = "<group>"; };
+		50C4D65A19E390C60051F236 /* BGShowsAddPopularViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsAddPopularViewController.m; sourceTree = "<group>"; };
+		50C4D65C19E392260051F236 /* BGShowsAddPopularViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGShowsAddPopularViewController.xib; sourceTree = "<group>"; };
 		50D745A919E506510088C99C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		50D745B119E739700088C99C /* BGPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGPrefix.pch; sourceTree = "<group>"; };
 		50D745B219E73F7F0088C99C /* BGServiceError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGServiceError.h; sourceTree = "<group>"; };
@@ -112,6 +115,11 @@
 		50D745BE19E8E72F0088C99C /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
 		50D745C219EB7D620088C99C /* BGCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCollectionViewCell.h; sourceTree = "<group>"; };
 		50D745C319EB7D620088C99C /* BGCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCollectionViewCell.m; sourceTree = "<group>"; };
+		50EF38AB1A004F1900CC4294 /* BGTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTabBarController.h; sourceTree = "<group>"; };
+		50EF38AC1A004F1900CC4294 /* BGTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTabBarController.m; sourceTree = "<group>"; };
+		50EF38B41A0334E200CC4294 /* BGShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShowsViewController.h; sourceTree = "<group>"; };
+		50EF38B51A0334E200CC4294 /* BGShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsViewController.m; sourceTree = "<group>"; };
+		50EF38B61A0334E200CC4294 /* BGShowsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGShowsViewController.xib; sourceTree = "<group>"; };
 		50F7770A19F4775000B3CE7A /* UIColor+BoxGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BoxGuide.h"; sourceTree = "<group>"; };
 		50F7770B19F4775000B3CE7A /* UIColor+BoxGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BoxGuide.m"; sourceTree = "<group>"; };
 		50F952F319F2337000F02295 /* BGContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGContentViewController.h; sourceTree = "<group>"; };
@@ -203,9 +211,12 @@
 		50783F4319F07C6E006E3E05 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				50C4D65919E390C60051F236 /* BGShowsViewController.h */,
-				50C4D65A19E390C60051F236 /* BGShowsViewController.m */,
-				50C4D65C19E392260051F236 /* BGShowsViewController.xib */,
+				50C4D65919E390C60051F236 /* BGShowsAddPopularViewController.h */,
+				50C4D65A19E390C60051F236 /* BGShowsAddPopularViewController.m */,
+				50C4D65C19E392260051F236 /* BGShowsAddPopularViewController.xib */,
+				50EF38B41A0334E200CC4294 /* BGShowsViewController.h */,
+				50EF38B51A0334E200CC4294 /* BGShowsViewController.m */,
+				50EF38B61A0334E200CC4294 /* BGShowsViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -220,6 +231,8 @@
 				50C4D65419E38F560051F236 /* BGRootMenuViewController.h */,
 				50C4D65519E38F570051F236 /* BGRootMenuViewController.m */,
 				50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */,
+				50EF38AB1A004F1900CC4294 /* BGTabBarController.h */,
+				50EF38AC1A004F1900CC4294 /* BGTabBarController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -448,13 +461,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D745BC19E8BABE0088C99C /* BGAddShowCollectionViewCell.xib in Resources */,
-				50C4D65D19E392260051F236 /* BGShowsViewController.xib in Resources */,
+				50C4D65D19E392260051F236 /* BGShowsAddPopularViewController.xib in Resources */,
 				502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */,
 				50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */,
 				502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */,
 				509E282919F48EFF001F5CEA /* Localizable.strings in Resources */,
 				50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */,
 				50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */,
+				50EF38B81A0334E200CC4294 /* BGShowsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +525,7 @@
 				502637EA19E71DEE00B80ADA /* BGService.m in Sources */,
 				502637E419E71B1900B80ADA /* BGShowsService.m in Sources */,
 				50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */,
+				50EF38AD1A004F1900CC4294 /* BGTabBarController.m in Sources */,
 				505525FA19FD389100DC6616 /* BGPaginatorCollectionViewHandler.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
 				502637E119E7070000B80ADA /* BGShow.m in Sources */,
@@ -520,11 +535,12 @@
 				50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */,
 				50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */,
 				50F9F05719FDAA5E00C166CA /* BGModel.m in Sources */,
+				50EF38B71A0334E200CC4294 /* BGShowsViewController.m in Sources */,
 				509E282F19F4A90F001F5CEA /* UIColor+Additions.m in Sources */,
 				50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,
-				50C4D65B19E390C60051F236 /* BGShowsViewController.m in Sources */,
+				50C4D65B19E390C60051F236 /* BGShowsAddPopularViewController.m in Sources */,
 				50D745BA19E8BAA30088C99C /* BGAddShowCollectionViewCell.m in Sources */,
 				50D745B419E73F7F0088C99C /* BGServiceError.m in Sources */,
 				502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */,

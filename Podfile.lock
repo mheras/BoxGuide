@@ -11,6 +11,7 @@ PODS:
     - CocoaLumberjack/Core
   - CrashlyticsFramework (2.2.4)
   - FontAwesome+iOS (0.1.4)
+  - HMSegmentedControl (1.4.0)
   - ISO8601DateFormatterValueTransformer (0.6.0):
     - RKValueTransformers (~> 1.1.0)
   - MMDrawerController (0.5.7):
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - CocoaLumberjack (= 2.0.0-beta2)
   - CrashlyticsFramework (= 2.2.4)
   - FontAwesome+iOS (= 0.1.4)
+  - HMSegmentedControl (= 1.4.0)
   - MMDrawerController (= 0.5.7)
   - RestKit (= 0.23.3)
   - SpinKit (= 1.2.0)
@@ -64,6 +66,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 956d3fb98fed498a13d56499f262c975ef431c98
   CrashlyticsFramework: 0c28a2c07a51b7691e6668b83824b0b0be77f307
   FontAwesome+iOS: 816c20304edef4ca92835de669577005cbaaf261
+  HMSegmentedControl: c0517a8d4b80c978b8386f863f1c44729cfd7d6f
   ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
   MMDrawerController: c3ab7a318ddc7e2bcd133139c3161af08c6e1197
   RestKit: 193a35cddae5198388977abaedad129f8acb978b

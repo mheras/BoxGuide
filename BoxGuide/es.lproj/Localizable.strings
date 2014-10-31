@@ -12,3 +12,7 @@
 "RootMenu.Options.Statistics" = "Estadísticas";
 "RootMenu.Options.Configuration" = "Configuración";
 "RootMenu.Options.Help" = "Ayuda";
+
+"Shows.Title" = "Mis Series";
+
+"ShowsAddPopular.Title" = "Populares";

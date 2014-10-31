@@ -9,7 +9,8 @@
 #import "BGRootMenuViewController.h"
 #import "BGRootMenuTableViewCell.h"
 #import "BGDummyViewController.h" // TODO: Remove it.
-#import "BGShowsViewController.h" // TODO: Remove it.
+#import "BGShowsViewController.h"
+#import "BGTabBarController.h"
 #import <MMDrawerController/UIViewController+MMDrawerController.h>
 
 const CGFloat kRootMenuWidth = 150.0f;
@@ -35,7 +36,7 @@ static NSString * const kOptionHelpKey = @"RootMenu.Options.Help";
     self = [super init];
     if (self) {
         
-        self.viewControllerPerOption = @{kOptionShowsKey : [[BGShowsViewController alloc] init], kOptionListsKey : [[BGDummyViewController alloc] init], kOptionMoviesKey : [[BGDummyViewController alloc] init], kOptionStatisticsKey : [[BGDummyViewController alloc] init], kOptionConfigurationKey : [[BGDummyViewController alloc] init], kOptionHelpKey : [[BGDummyViewController alloc] init]};
+        self.viewControllerPerOption = @{kOptionShowsKey : [self createShowsTabBarController], kOptionListsKey : [[BGDummyViewController alloc] init], kOptionMoviesKey : [[BGDummyViewController alloc] init], kOptionStatisticsKey : [[BGDummyViewController alloc] init], kOptionConfigurationKey : [[BGDummyViewController alloc] init], kOptionHelpKey : [[BGDummyViewController alloc] init]};
         self.optionsPerSection = @[@[kOptionShowsKey, kOptionListsKey, kOptionMoviesKey, kOptionStatisticsKey], @[kOptionConfigurationKey, kOptionHelpKey]];
     }
     return self;
@@ -68,6 +69,14 @@ static NSString * const kOptionHelpKey = @"RootMenu.Options.Help";
     return [[UINavigationController alloc] initWithRootViewController:self.viewControllerPerOption[[[self.optionsPerSection firstObject] firstObject]]];
 }
 
+- (BGViewController *)createShowsTabBarController {
+    BGTabBarController *showsTabBarController = [[BGTabBarController alloc] initWithViewControllers:@[[[BGShowsViewController alloc] init], [[BGDummyViewController alloc] init], [[BGDummyViewController alloc] init], [[BGDummyViewController alloc] init]]];
+    showsTabBarController.title = NSLocalizedString(kOptionShowsKey, nil);
+    return showsTabBarController;
+}
+
+#pragma mark - UITableViewDataSource
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [self.optionsPerSection count];
 }
@@ -82,6 +91,8 @@ static NSString * const kOptionHelpKey = @"RootMenu.Options.Help";
     cell.textLabel.text = NSLocalizedString(self.optionsPerSection[indexPath.section][indexPath.row], nil);
     return cell;
 }
+
+#pragma mark - UITableViewDelegate
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     

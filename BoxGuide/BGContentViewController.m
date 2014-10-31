@@ -7,6 +7,7 @@
 //
 
 #import "BGContentViewController.h"
+#import "BGTabBarController.h"
 #import <FontAwesome+iOS/UIFont+FontAwesome.h>
 #import <FontAwesome+iOS/NSString+FontAwesome.h>
 #import <MMDrawerController/UIViewController+MMDrawerController.h>
@@ -22,8 +23,9 @@
     
     [super viewWillAppear:animated];
     
-    if ([self.navigationController.viewControllers firstObject] == self) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-list-ul"] style:UIBarButtonItemStylePlain target:self action:@selector(onRootMenuButtonTouch)];
+    BGViewController *firstViewController = [self.navigationController.viewControllers firstObject];
+    if (firstViewController == self) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%C", (unichar)0xf0c9] style:UIBarButtonItemStylePlain target:self action:@selector(onRootMenuButtonTouch)];
         [self.navigationItem.leftBarButtonItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontAwesomeFontOfSize:17.0]} forState:UIControlStateNormal];
     }
 }
