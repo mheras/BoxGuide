@@ -14,5 +14,6 @@
 "RootMenu.Options.Help" = "Help";
 
 "Shows.Title" = "My Shows";
+"Shows.AddShow" = "Add Show";
 
 "ShowsAddPopular.Title" = "Popular";

@@ -8,6 +8,8 @@
 
 #import "BGShowsViewController.h"
 #import "BGShowsAddPopularViewController.h"
+#import "BGTabBarController.h"
+#import "BGDummyViewController.h" // TODO: Remove.
 #import <FontAwesome+iOS/UIFont+FontAwesome.h>
 #import <FontAwesome+iOS/NSString+FontAwesome.h>
 
@@ -32,7 +34,12 @@
 }
 
 - (void)onAddShowButtonTouch:(id)sender {
-    [self.navigationController pushViewController:[[BGShowsAddPopularViewController alloc] init] animated:YES];
+    
+    BGTabBarController *showsAddTabBarController = [[BGTabBarController alloc] initWithViewControllers:@[[[BGShowsAddPopularViewController alloc] init], [[BGDummyViewController alloc] init], [[BGDummyViewController alloc] init]]];
+    
+    showsAddTabBarController.title = NSLocalizedString(@"Shows.AddShow", nil);
+    
+    [self.navigationController pushViewController:showsAddTabBarController animated:YES];
 }
 
 @end

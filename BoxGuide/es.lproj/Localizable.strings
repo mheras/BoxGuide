@@ -14,5 +14,6 @@
 "RootMenu.Options.Help" = "Ayuda";
 
 "Shows.Title" = "Mis Series";
+"Shows.AddShow" = "Agregar Serie";
 
 "ShowsAddPopular.Title" = "Populares";
