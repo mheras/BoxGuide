@@ -27,6 +27,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome.ttf</string>
+		<string>Lobster1.4.otf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

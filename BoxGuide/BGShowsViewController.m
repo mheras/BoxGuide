@@ -10,8 +10,8 @@
 #import "BGShowsAddPopularViewController.h"
 #import "BGTabBarController.h"
 #import "BGDummyViewController.h" // TODO: Remove.
-#import <FontAwesome+iOS/UIFont+FontAwesome.h>
-#import <FontAwesome+iOS/NSString+FontAwesome.h>
+#import "UIFont+BoxGuide.h"
+#import "NSString+FontAwesome.h"
 
 @interface BGShowsViewController ()
 
@@ -24,8 +24,8 @@
     
     [CATransaction begin];
     [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
-    [self.parentViewController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"%C", (unichar)0xf0fe] style:UIBarButtonItemStylePlain target:self action:@selector(onAddShowButtonTouch:)] animated:NO];
-    [self.parentViewController.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontAwesomeFontOfSize:17.0]} forState:UIControlStateNormal];
+    [self.parentViewController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:[NSString bg_stringWithFontAwesomeIcon:BGFontAwesomeIconAddShow] style:UIBarButtonItemStylePlain target:self action:@selector(onAddShowButtonTouch:)] animated:NO];
+    [self.parentViewController.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont bg_fontAwesomeFontOfSize:17.0]} forState:UIControlStateNormal];
     [CATransaction commit];
 }
 

@@ -16,6 +16,10 @@
 		502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152E19E4F51300F7028C /* BGDummyViewController.m */; };
 		502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F153019E4F52900F7028C /* BGDummyViewController.xib */; };
 		505525FA19FD389100DC6616 /* BGPaginatorCollectionViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 505525F919FD389100DC6616 /* BGPaginatorCollectionViewHandler.m */; };
+		506A388D1A071D1B00113625 /* UINavigationBar+FixedLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 506A388C1A071D1B00113625 /* UINavigationBar+FixedLogo.m */; };
+		506A38911A072A4300113625 /* Lobster1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 506A38901A072A3800113625 /* Lobster1.4.otf */; };
+		506A38941A0731C800113625 /* UIFont+BoxGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 506A38931A0731C800113625 /* UIFont+BoxGuide.m */; };
+		506A38971A07321600113625 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 506A38961A07321600113625 /* NSString+FontAwesome.m */; };
 		506C71BD19F2C5AD006ACC5E /* BGGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 506C71BC19F2C5AD006ACC5E /* BGGradientView.m */; };
 		50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F4D19F07E3B006E3E05 /* BGServicePaginator.m */; };
 		50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */; };
@@ -25,6 +29,10 @@
 		50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AFB19DCDB2400ABFF4E /* BGAppDelegate.m */; };
 		50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AB1B0319DCDB2400ABFF4E /* Images.xcassets */; };
 		50AB1B1319DCDB2400ABFF4E /* BoxGuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1B1219DCDB2400ABFF4E /* BoxGuideTests.m */; };
+		50BFFA8E1A04A1C0006F5D7D /* BGShowsUpcomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA8C1A04A1C0006F5D7D /* BGShowsUpcomingViewController.m */; };
+		50BFFA8F1A04A1C0006F5D7D /* BGShowsUpcomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BFFA8D1A04A1C0006F5D7D /* BGShowsUpcomingViewController.xib */; };
+		50BFFA931A04A1F5006F5D7D /* BGShowsRecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA911A04A1F5006F5D7D /* BGShowsRecentViewController.m */; };
+		50BFFA941A04A1F5006F5D7D /* BGShowsRecentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BFFA921A04A1F5006F5D7D /* BGShowsRecentViewController.xib */; };
 		50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65219E38F290051F236 /* BGViewController.m */; };
 		50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C4D65519E38F570051F236 /* BGRootMenuViewController.m */; };
 		50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4D65619E38F570051F236 /* BGRootMenuViewController.xib */; };
@@ -75,6 +83,13 @@
 		505525F719FD37A600DC6616 /* BGPaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGPaginator.h; sourceTree = "<group>"; };
 		505525F819FD389100DC6616 /* BGPaginatorCollectionViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGPaginatorCollectionViewHandler.h; sourceTree = "<group>"; };
 		505525F919FD389100DC6616 /* BGPaginatorCollectionViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGPaginatorCollectionViewHandler.m; sourceTree = "<group>"; };
+		506A388B1A071D1B00113625 /* UINavigationBar+FixedLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+FixedLogo.h"; sourceTree = "<group>"; };
+		506A388C1A071D1B00113625 /* UINavigationBar+FixedLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+FixedLogo.m"; sourceTree = "<group>"; };
+		506A38901A072A3800113625 /* Lobster1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster1.4.otf; sourceTree = "<group>"; };
+		506A38921A0731C800113625 /* UIFont+BoxGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+BoxGuide.h"; sourceTree = "<group>"; };
+		506A38931A0731C800113625 /* UIFont+BoxGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+BoxGuide.m"; sourceTree = "<group>"; };
+		506A38951A07321600113625 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		506A38961A07321600113625 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 		506C71BB19F2C5AD006ACC5E /* BGGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGGradientView.h; sourceTree = "<group>"; };
 		506C71BC19F2C5AD006ACC5E /* BGGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGGradientView.m; sourceTree = "<group>"; };
 		50783F4C19F07E3B006E3E05 /* BGServicePaginator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGServicePaginator.h; sourceTree = "<group>"; };
@@ -94,6 +109,12 @@
 		50AB1B0C19DCDB2400ABFF4E /* BoxGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoxGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AB1B1119DCDB2400ABFF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50AB1B1219DCDB2400ABFF4E /* BoxGuideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoxGuideTests.m; sourceTree = "<group>"; };
+		50BFFA8B1A04A1C0006F5D7D /* BGShowsUpcomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShowsUpcomingViewController.h; sourceTree = "<group>"; };
+		50BFFA8C1A04A1C0006F5D7D /* BGShowsUpcomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsUpcomingViewController.m; sourceTree = "<group>"; };
+		50BFFA8D1A04A1C0006F5D7D /* BGShowsUpcomingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGShowsUpcomingViewController.xib; sourceTree = "<group>"; };
+		50BFFA901A04A1F5006F5D7D /* BGShowsRecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShowsRecentViewController.h; sourceTree = "<group>"; };
+		50BFFA911A04A1F5006F5D7D /* BGShowsRecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsRecentViewController.m; sourceTree = "<group>"; };
+		50BFFA921A04A1F5006F5D7D /* BGShowsRecentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGShowsRecentViewController.xib; sourceTree = "<group>"; };
 		50C4D65119E38F290051F236 /* BGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGViewController.h; sourceTree = "<group>"; };
 		50C4D65219E38F290051F236 /* BGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGViewController.m; sourceTree = "<group>"; };
 		50C4D65419E38F560051F236 /* BGRootMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGRootMenuViewController.h; sourceTree = "<group>"; };
@@ -217,6 +238,12 @@
 				50EF38B41A0334E200CC4294 /* BGShowsViewController.h */,
 				50EF38B51A0334E200CC4294 /* BGShowsViewController.m */,
 				50EF38B61A0334E200CC4294 /* BGShowsViewController.xib */,
+				50BFFA8B1A04A1C0006F5D7D /* BGShowsUpcomingViewController.h */,
+				50BFFA8C1A04A1C0006F5D7D /* BGShowsUpcomingViewController.m */,
+				50BFFA8D1A04A1C0006F5D7D /* BGShowsUpcomingViewController.xib */,
+				50BFFA901A04A1F5006F5D7D /* BGShowsRecentViewController.h */,
+				50BFFA911A04A1F5006F5D7D /* BGShowsRecentViewController.m */,
+				50BFFA921A04A1F5006F5D7D /* BGShowsRecentViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -264,6 +291,12 @@
 				50F7770B19F4775000B3CE7A /* UIColor+BoxGuide.m */,
 				509E282D19F4A90F001F5CEA /* UIColor+Additions.h */,
 				509E282E19F4A90F001F5CEA /* UIColor+Additions.m */,
+				506A38951A07321600113625 /* NSString+FontAwesome.h */,
+				506A38961A07321600113625 /* NSString+FontAwesome.m */,
+				506A388B1A071D1B00113625 /* UINavigationBar+FixedLogo.h */,
+				506A388C1A071D1B00113625 /* UINavigationBar+FixedLogo.m */,
+				506A38921A0731C800113625 /* UIFont+BoxGuide.h */,
+				506A38931A0731C800113625 /* UIFont+BoxGuide.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -346,6 +379,7 @@
 		50D745A819E5061D0088C99C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				506A38901A072A3800113625 /* Lobster1.4.otf */,
 				50D745A919E506510088C99C /* FontAwesome.ttf */,
 			);
 			path = Resources;
@@ -464,11 +498,14 @@
 				50C4D65D19E392260051F236 /* BGShowsAddPopularViewController.xib in Resources */,
 				502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */,
 				50C4D65819E38F570051F236 /* BGRootMenuViewController.xib in Resources */,
+				50BFFA941A04A1F5006F5D7D /* BGShowsRecentViewController.xib in Resources */,
+				50BFFA8F1A04A1C0006F5D7D /* BGShowsUpcomingViewController.xib in Resources */,
 				502F153119E4F52900F7028C /* BGDummyViewController.xib in Resources */,
 				509E282919F48EFF001F5CEA /* Localizable.strings in Resources */,
 				50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */,
 				50D745AA19E506510088C99C /* FontAwesome.ttf in Resources */,
 				50EF38B81A0334E200CC4294 /* BGShowsViewController.xib in Resources */,
+				506A38911A072A4300113625 /* Lobster1.4.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,15 +559,19 @@
 				502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */,
 				50F952F519F2337000F02295 /* BGContentViewController.m in Sources */,
 				50F7770C19F4775000B3CE7A /* UIColor+BoxGuide.m in Sources */,
+				506A38941A0731C800113625 /* UIFont+BoxGuide.m in Sources */,
 				502637EA19E71DEE00B80ADA /* BGService.m in Sources */,
 				502637E419E71B1900B80ADA /* BGShowsService.m in Sources */,
 				50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */,
 				50EF38AD1A004F1900CC4294 /* BGTabBarController.m in Sources */,
 				505525FA19FD389100DC6616 /* BGPaginatorCollectionViewHandler.m in Sources */,
 				50C4D65319E38F2A0051F236 /* BGViewController.m in Sources */,
+				506A388D1A071D1B00113625 /* UINavigationBar+FixedLogo.m in Sources */,
 				502637E119E7070000B80ADA /* BGShow.m in Sources */,
 				506C71BD19F2C5AD006ACC5E /* BGGradientView.m in Sources */,
 				50D745C419EB7D620088C99C /* BGCollectionViewCell.m in Sources */,
+				50BFFA8E1A04A1C0006F5D7D /* BGShowsUpcomingViewController.m in Sources */,
+				50BFFA931A04A1F5006F5D7D /* BGShowsRecentViewController.m in Sources */,
 				50D745BF19E8E72F0088C99C /* UIImageView+URL.m in Sources */,
 				50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */,
 				50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */,
@@ -542,6 +583,7 @@
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,
 				50C4D65B19E390C60051F236 /* BGShowsAddPopularViewController.m in Sources */,
 				50D745BA19E8BAA30088C99C /* BGAddShowCollectionViewCell.m in Sources */,
+				506A38971A07321600113625 /* NSString+FontAwesome.m in Sources */,
 				50D745B419E73F7F0088C99C /* BGServiceError.m in Sources */,
 				502F152F19E4F51300F7028C /* BGDummyViewController.m in Sources */,
 				50AB1AF919DCDB2400ABFF4E /* main.m in Sources */,

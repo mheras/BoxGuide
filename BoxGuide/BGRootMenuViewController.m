@@ -10,6 +10,8 @@
 #import "BGRootMenuTableViewCell.h"
 #import "BGDummyViewController.h" // TODO: Remove it.
 #import "BGShowsViewController.h"
+#import "BGShowsUpcomingViewController.h"
+#import "BGShowsRecentViewController.h"
 #import "BGTabBarController.h"
 #import <MMDrawerController/UIViewController+MMDrawerController.h>
 
@@ -70,7 +72,7 @@ static NSString * const kOptionHelpKey = @"RootMenu.Options.Help";
 }
 
 - (BGViewController *)createShowsTabBarController {
-    BGTabBarController *showsTabBarController = [[BGTabBarController alloc] initWithViewControllers:@[[[BGShowsViewController alloc] init], [[BGDummyViewController alloc] init], [[BGDummyViewController alloc] init], [[BGDummyViewController alloc] init]]];
+    BGTabBarController *showsTabBarController = [[BGTabBarController alloc] initWithViewControllers:@[[[BGShowsViewController alloc] init], [[BGShowsUpcomingViewController alloc] init], [[BGShowsRecentViewController alloc] init]]];
     showsTabBarController.title = NSLocalizedString(kOptionShowsKey, nil);
     return showsTabBarController;
 }

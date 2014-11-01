@@ -11,8 +11,32 @@
 
 @implementation UIColor (BoxGuide)
 
-+ (UIColor *)bg_topBarColor {
-    return [UIColor colorWithRed:0.169f green:0.184f blue:0.196f alpha:1.00f];
++ (UIColor *)bg_topBarBackgroundColor {
+    return [UIColor colorWithRed:0.855f green:0.314f blue:0.055f alpha:1.00f];
+}
+
++ (UIColor *)bg_logoTextColor {
+    return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
+}
+
++ (UIColor *)bg_topBarTextColor {
+    return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
+}
+
++ (UIColor *)bg_tabBarBackgroundColor {
+    return [UIColor colorWithRed:0.757f green:0.251f blue:0.000f alpha:1.00f];
+}
+
++ (UIColor *)bg_tabBarSelectedBackgroundColor {
+    return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
+}
+
++ (UIColor *)bg_tabBarTextColor {
+    return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
+}
+
++ (UIColor *)bg_tabBarSelectedTextColor {
+    return [UIColor colorWithRed:0.855f green:0.314f blue:0.055f alpha:1.00f];
 }
 
 + (UIColor *)bg_rootMenuOptionSelectedColor {
@@ -24,7 +48,7 @@
 }
 
 + (UIColor *)bg_contentBackgroundColor {
-    return [UIColor colorWithRed:0.255f green:0.271f blue:0.286f alpha:1.00f];
+    return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
 }
 
 @end

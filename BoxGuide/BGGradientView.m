@@ -33,7 +33,9 @@
 
 - (void)setupDefault {
     self.layer.frame = self.bounds;
-    self.backgroundColor = [UIColor bg_contentBackgroundColor];
+    if (self.backgroundColor == nil) {
+        self.backgroundColor = [UIColor bg_contentBackgroundColor];
+    }
 }
 
 - (void)setupGradientLayer {

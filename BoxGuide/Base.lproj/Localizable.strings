@@ -16,4 +16,7 @@
 "Shows.Title" = "My Shows";
 "Shows.AddShow" = "Add Show";
 
+"ShowsUpcoming.Title" = "Upcoming";
+"ShowsRecent.Title" = "Recent";
+
 "ShowsAddPopular.Title" = "Popular";

@@ -10,7 +10,6 @@ PODS:
   - CocoaLumberjack/Extensions (2.0.0-beta2):
     - CocoaLumberjack/Core
   - CrashlyticsFramework (2.2.4)
-  - FontAwesome+iOS (0.1.4)
   - HMSegmentedControl (1.4.0)
   - ISO8601DateFormatterValueTransformer (0.6.0):
     - RKValueTransformers (~> 1.1.0)
@@ -49,25 +48,23 @@ PODS:
   - RKValueTransformers (1.1.0)
   - SOCKit (1.1)
   - SpinKit (1.2.0)
-  - TMCache (1.2.0)
+  - TMCache (1.2.2)
   - TransitionKit (2.1.0)
 
 DEPENDENCIES:
   - CocoaLumberjack (= 2.0.0-beta2)
   - CrashlyticsFramework (= 2.2.4)
-  - FontAwesome+iOS (= 0.1.4)
   - HMSegmentedControl (= 1.4.0)
   - JRSwizzle (= 1.0)
   - MMDrawerController (= 0.5.7)
   - RestKit (= 0.23.3)
   - SpinKit (= 1.2.0)
-  - TMCache (= 1.2)
+  - TMCache (= 1.2.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
   CocoaLumberjack: 956d3fb98fed498a13d56499f262c975ef431c98
   CrashlyticsFramework: 0c28a2c07a51b7691e6668b83824b0b0be77f307
-  FontAwesome+iOS: 816c20304edef4ca92835de669577005cbaaf261
   HMSegmentedControl: c0517a8d4b80c978b8386f863f1c44729cfd7d6f
   ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
   JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
@@ -76,7 +73,7 @@ SPEC CHECKSUMS:
   RKValueTransformers: b705e7b4651b9206b94600408462b74554bba969
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
   SpinKit: 11fa465172473ce3d59a80bf0449020b850e5229
-  TMCache: ea1c509badaf9a1245422aabf3c975b3277ab138
+  TMCache: e2c9225de7a107b529d1d04baa58eb5eab3051f3
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
 
 COCOAPODS: 0.34.4

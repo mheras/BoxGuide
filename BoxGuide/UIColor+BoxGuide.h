@@ -10,7 +10,19 @@
 
 @interface UIColor (BoxGuide)
 
-+ (UIColor *)bg_topBarColor;
++ (UIColor *)bg_topBarBackgroundColor;
+
++ (UIColor *)bg_logoTextColor;
+
++ (UIColor *)bg_topBarTextColor;
+
++ (UIColor *)bg_tabBarBackgroundColor;
+
++ (UIColor *)bg_tabBarSelectedBackgroundColor;
+
++ (UIColor *)bg_tabBarTextColor;
+
++ (UIColor *)bg_tabBarSelectedTextColor;
 
 + (UIColor *)bg_rootMenuOptionDeselectedColor;
 
