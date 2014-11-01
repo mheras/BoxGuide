@@ -9,4 +9,6 @@
 #ifndef BG_Prefix_pch
 #define BG_Prefix_pch
 
+#define BGToWeak(object, name) __weak typeof(object) name = object
+
 #endif

@@ -108,8 +108,7 @@ static const NSInteger kTMDBMaxPage = 1000;
         
         NSMutableURLRequest *request = [self.manager requestWithObject:nil method:RKRequestMethodGET path:self.path parameters:parameters];
         
-        __weak typeof(self) weakSelf = self;
-        
+        BGToWeak(self, weakSelf);
         self.requestOperation = [self.manager objectRequestOperationWithRequest:request currentResponseDescriptors:@[self.responseDescriptor] success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
             
             weakSelf.requestOperation = nil;

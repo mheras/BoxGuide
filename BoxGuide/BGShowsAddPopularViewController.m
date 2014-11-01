@@ -68,7 +68,7 @@
     // Snapshotting a view that has not been rendered results in an empty snapshot.
     // Ensure your view has been rendered at least once before snapshotting or snapshot after screen updates.
     // ****
-    __weak typeof(self) weakSelf = self;
+    BGToWeak(self, weakSelf);
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf setupCollectionViewLayout];
     });

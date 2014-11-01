@@ -62,8 +62,7 @@ static char kBGURLObjectKey;
         
         self.image = placeholderImage;
         
-        __weak typeof(self) weakSelf = self;
-        
+        BGToWeak(self, weakSelf);
         [[self bg_imageCache] objectForKey:[url absoluteString] block:^(TMCache *cache, NSString *key, id object) {
             
             if ([key isEqualToString:[weakSelf.bg_url absoluteString]]) {

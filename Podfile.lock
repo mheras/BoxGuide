@@ -14,6 +14,7 @@ PODS:
   - HMSegmentedControl (1.4.0)
   - ISO8601DateFormatterValueTransformer (0.6.0):
     - RKValueTransformers (~> 1.1.0)
+  - JRSwizzle (1.0)
   - MMDrawerController (0.5.7):
     - MMDrawerController/Core
     - MMDrawerController/MMDrawerBarButtonItem
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - CrashlyticsFramework (= 2.2.4)
   - FontAwesome+iOS (= 0.1.4)
   - HMSegmentedControl (= 1.4.0)
+  - JRSwizzle (= 1.0)
   - MMDrawerController (= 0.5.7)
   - RestKit (= 0.23.3)
   - SpinKit (= 1.2.0)
@@ -68,6 +70,7 @@ SPEC CHECKSUMS:
   FontAwesome+iOS: 816c20304edef4ca92835de669577005cbaaf261
   HMSegmentedControl: c0517a8d4b80c978b8386f863f1c44729cfd7d6f
   ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
+  JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
   MMDrawerController: c3ab7a318ddc7e2bcd133139c3161af08c6e1197
   RestKit: 193a35cddae5198388977abaedad129f8acb978b
   RKValueTransformers: b705e7b4651b9206b94600408462b74554bba969

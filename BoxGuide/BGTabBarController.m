@@ -106,7 +106,7 @@
         
         self.segmentedControl.userInteractionEnabled = NO;
         
-        __weak typeof(self) weakSelf = self;
+        BGToWeak(self, weakSelf);
         [self transitionFromViewController:self.currentViewController toViewController:toViewController duration:0.15 options:0 animations:^{
             
             [weakSelf.view addConstraints:constraints];

@@ -17,7 +17,7 @@ NSString * const kAPIKey = @"b8cef09e0eb4c815b2ad4c2197136a5b";
 - (RKObjectManager *)manager {
     static dispatch_once_t onceToken;
     static RKObjectManager *sharedManager;
-    __weak typeof(self) weakSelf = self;
+    BGToWeak(self, weakSelf);
     dispatch_once(&onceToken, ^{
         [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
         sharedManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://api.themoviedb.org"]];
