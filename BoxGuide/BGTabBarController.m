@@ -8,6 +8,7 @@
 
 #import "BGTabBarController.h"
 #import "UIColor+BoxGuide.h"
+#import "UIFont+BoxGuide.h"
 #import <HMSegmentedControl/HMSegmentedControl.h>
 
 @interface HMSegmentedControl (Notify)
@@ -18,7 +19,6 @@
 
 @interface BGTabBarController ()
 
-@property (nonatomic, strong) NSLayoutConstraint *currentViewControllerLeftConstraint;
 @property (nonatomic, weak) BGViewController *currentViewController;
 
 @property (nonatomic, strong) UIToolbar *toolbar;
@@ -49,33 +49,17 @@
 }
 
 - (void)viewDidLoad {
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+    [super viewDidLoad];
     [self setupSegmentedControl];
     self.selectedIndex = self.startIndex;
-}
-
-- (void)hideNavBarHairline {
-    for (UIView *firstLevelSubviews in self.navigationController.navigationBar.subviews) {
-        for (UIView *secondLevelSubviews in firstLevelSubviews.subviews) {
-            if ([secondLevelSubviews isKindOfClass:[UIImageView class]] && secondLevelSubviews.bounds.size.width == self.navigationController.navigationBar.frame.size.width &&
-                secondLevelSubviews.bounds.size.height < 2) {
-                secondLevelSubviews.hidden = YES;
-            }
-        }
-    }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self hideNavBarHairline];
 }
 
 - (void)setupSegmentedControl {
     
     self.toolbar = [[UIToolbar alloc] init];
-    self.toolbar.translucent = NO;
-    self.toolbar.barTintColor = [UIColor bg_topBarBackgroundColor];
+    self.toolbar.barStyle = UIBarStyleBlackTranslucent;
+    
+    // Add the toolbar to the view.
     [self.view addSubview:self.toolbar];
     
     NSMutableArray *titles = [[NSMutableArray alloc] init];
@@ -84,49 +68,44 @@
         [titles addObject:title != nil ? [title uppercaseString] : @""];
     }
     
-    UIBarButtonItem *flexibleSpace  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    
     self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:titles];
-    self.segmentedControl.layer.cornerRadius = 5.0f;
-    self.segmentedControl.clipsToBounds = YES;
-    self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationNone;
-    self.segmentedControl.font = [UIFont systemFontOfSize:11.0f];
-    self.segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0.0f, 5.0f, 0.0f, 5.0f);
-    self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-    self.segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleBox;
+    self.segmentedControl.font = [UIFont bg_defaultFontOfSize:11.0f];
+    //self.segmentedControl.segmentEdgeInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
+    self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationUp;
+    self.segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleTextWidthStripe;
     
-    self.segmentedControl.backgroundColor = [UIColor bg_tabBarBackgroundColor];
+    self.segmentedControl.backgroundColor = [UIColor clearColor];
     self.segmentedControl.textColor = [UIColor bg_tabBarTextColor];
     self.segmentedControl.selectionIndicatorColor = [UIColor bg_tabBarSelectedBackgroundColor];
     self.segmentedControl.selectedTextColor = [UIColor bg_tabBarSelectedTextColor];
-    self.segmentedControl.selectionIndicatorBoxOpacity = 1.0f;
+    self.segmentedControl.selectionIndicatorBoxOpacity = 0.0f;
     
     [self.segmentedControl addTarget:self action:@selector(segmentedControlIndexChanged:) forControlEvents:UIControlEventValueChanged];
     
-    self.toolbar.items = @[flexibleSpace, [[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl], flexibleSpace];
-    
     // Constraints for the toolbar.
     self.toolbar.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.toolbar attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:0.0f]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.toolbar attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f constant:0.0f]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.toolbar attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:0.0f]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[toolbar]|" options:0 metrics:nil views:@{@"toolbar" : self.toolbar}]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.toolbar attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f]];
     [self.toolbar addConstraint:[NSLayoutConstraint constraintWithItem:self.toolbar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:44.0f]];
+    
+    [self.toolbar addSubview:self.segmentedControl];
     
     // Constraints for the segmented control.
     self.segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.segmentedControl addConstraint:[NSLayoutConstraint constraintWithItem:self.segmentedControl attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:30.0f]];
-    [self.segmentedControl addConstraint:[NSLayoutConstraint constraintWithItem:self.segmentedControl attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:300.0f]];
+    [self.toolbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[segmentedControl(segmentedControlWidth)]" options:0 metrics:@{@"segmentedControlWidth" : @320} views:@{@"segmentedControl" : self.segmentedControl}]];
+    [self.toolbar addConstraint:[NSLayoutConstraint constraintWithItem:self.segmentedControl attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.toolbar attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
+    [self.toolbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[segmentedControl]|" options:0 metrics:nil views:@{@"segmentedControl" : self.segmentedControl}]];
 }
 
 - (NSArray *)buildConstraintsForViewController:(BGViewController *)viewController {
-    return @[[NSLayoutConstraint constraintWithItem:viewController.view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:0.0f], [NSLayoutConstraint constraintWithItem:viewController.view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f constant:0.0f], [NSLayoutConstraint constraintWithItem:viewController.view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.toolbar attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f], [NSLayoutConstraint constraintWithItem:viewController.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f]];
+    
+    return [[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[newView]|" options:0 metrics:nil views:@{@"newView" : viewController.view}] arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[newView]|" options:0 metrics:nil views:@{@"newView" : viewController.view}]];
 }
 
 - (void)segmentedControlIndexChanged:(id)sender {
     
     BGViewController *toViewController = self.viewControllers[self.selectedIndex];
     toViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
-    NSArray *constraints = [self buildConstraintsForViewController:toViewController];
     
     [self.navigationItem setRightBarButtonItem:nil animated:NO];
     
@@ -134,34 +113,44 @@
         
         [self addChildViewController:toViewController];
         [self.view addSubview:toViewController.view];
-        [self.view addConstraints:constraints];
+        [self.view addConstraints:[self buildConstraintsForViewController:toViewController]];
+        [self.view bringSubviewToFront:self.toolbar];
         [toViewController didMoveToParentViewController:self];
         self.currentViewController = toViewController;
         self.previousSelectedIndex = self.selectedIndex;
         
     } else {
         
-        [self.currentViewController willMoveToParentViewController:nil];
         [self addChildViewController:toViewController];
+        [toViewController beginAppearanceTransition:YES animated:YES];
         
+        [self.currentViewController beginAppearanceTransition:NO animated:YES];
+        [self.currentViewController willMoveToParentViewController:nil];
+    
+        [self.view addSubview:toViewController.view];
+        [self.view addConstraints:[self buildConstraintsForViewController:toViewController]];
+        
+        [self.view bringSubviewToFront:self.toolbar];
+
         toViewController.view.transform = CGAffineTransformMakeTranslation((self.previousSelectedIndex < self.selectedIndex ? 1 : -1) * CGRectGetWidth(self.currentViewController.view.frame), 0.0f);
+        [self.view layoutIfNeeded];
         
         self.segmentedControl.userInteractionEnabled = NO;
         
         BGToWeak(self, weakSelf);
-        [self transitionFromViewController:self.currentViewController toViewController:toViewController duration:0.15 options:0 animations:^{
-            [weakSelf.view addConstraints:constraints];
+        [UIView animateWithDuration:0.15f delay:0 options:0 animations:^{
             toViewController.view.transform = CGAffineTransformIdentity;
             weakSelf.currentViewController.view.transform = CGAffineTransformMakeTranslation((weakSelf.previousSelectedIndex < weakSelf.selectedIndex ? -1 : 1) * CGRectGetWidth(weakSelf.currentViewController.view.frame), 0.0f);
-            
+            [weakSelf.view layoutIfNeeded];
         } completion:^(BOOL finished) {
-            
-            [weakSelf.currentViewController removeFromParentViewController];
             [toViewController didMoveToParentViewController:weakSelf];
+            [weakSelf.currentViewController.view removeFromSuperview];
+            [weakSelf.currentViewController removeFromParentViewController];
+            [weakSelf.currentViewController endAppearanceTransition];
             weakSelf.currentViewController = toViewController;
             weakSelf.previousSelectedIndex = weakSelf.selectedIndex;
             weakSelf.segmentedControl.userInteractionEnabled = YES;
-            
+            [toViewController endAppearanceTransition];
         }];
     }
 }

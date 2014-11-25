@@ -16,8 +16,6 @@
 
 + (UIColor *)bg_topBarTextColor;
 
-+ (UIColor *)bg_tabBarBackgroundColor;
-
 + (UIColor *)bg_tabBarSelectedBackgroundColor;
 
 + (UIColor *)bg_tabBarTextColor;

@@ -7,6 +7,8 @@
 //
 
 #import "BGDummyViewController.h"
+#import "UIFont+BoxGuide.h"
+#import "NSString+FontAwesome.h"
 
 static NSInteger instanceCounter = 0;
 
@@ -32,27 +34,27 @@ static NSInteger instanceCounter = 0;
 }
 
 - (NSString *)title {
-    return [NSString stringWithFormat:@"Dummy %d", self.instanceNumber];
+    return [NSString stringWithFormat:@"Dummy %ld", self.instanceNumber];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSLog(@"viewWillAppear: %d", self.instanceNumber);
+    NSLog(@"viewWillAppear: %ld", self.instanceNumber);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear: %d", self.instanceNumber);
+    NSLog(@"viewDidAppear: %ld", self.instanceNumber);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    NSLog(@"viewWillDisappear: %d", self.instanceNumber);
+    NSLog(@"viewWillDisappear: %ld", self.instanceNumber);
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    NSLog(@"viewDidDisappear: %d", self.instanceNumber);
+    NSLog(@"viewDidDisappear: %ld", self.instanceNumber);
 }
 
 - (IBAction)onPushButtonTouch:(id)sender {

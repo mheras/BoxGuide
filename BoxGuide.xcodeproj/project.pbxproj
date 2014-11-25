@@ -24,7 +24,6 @@
 		50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F4D19F07E3B006E3E05 /* BGServicePaginator.m */; };
 		50783F5119F089F6006E3E05 /* RKObjectManager+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */; };
 		509E282919F48EFF001F5CEA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 509E282B19F48EFF001F5CEA /* Localizable.strings */; };
-		509E282F19F4A90F001F5CEA /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 509E282E19F4A90F001F5CEA /* UIColor+Additions.m */; };
 		50AB1AF919DCDB2400ABFF4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AF819DCDB2400ABFF4E /* main.m */; };
 		50AB1AFC19DCDB2400ABFF4E /* BGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB1AFB19DCDB2400ABFF4E /* BGAppDelegate.m */; };
 		50AB1B0419DCDB2400ABFF4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50AB1B0319DCDB2400ABFF4E /* Images.xcassets */; };
@@ -98,8 +97,6 @@
 		50783F5019F089F6006E3E05 /* RKObjectManager+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RKObjectManager+Additions.m"; sourceTree = "<group>"; };
 		509E282A19F48EFF001F5CEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		509E282C19F48F15001F5CEA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		509E282D19F4A90F001F5CEA /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
-		509E282E19F4A90F001F5CEA /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		50AB1AF319DCDB2400ABFF4E /* BoxGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AB1AF719DCDB2400ABFF4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50AB1AF819DCDB2400ABFF4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -289,8 +286,6 @@
 				50D745BE19E8E72F0088C99C /* UIImageView+URL.m */,
 				50F7770A19F4775000B3CE7A /* UIColor+BoxGuide.h */,
 				50F7770B19F4775000B3CE7A /* UIColor+BoxGuide.m */,
-				509E282D19F4A90F001F5CEA /* UIColor+Additions.h */,
-				509E282E19F4A90F001F5CEA /* UIColor+Additions.m */,
 				506A38951A07321600113625 /* NSString+FontAwesome.h */,
 				506A38961A07321600113625 /* NSString+FontAwesome.m */,
 				506A388B1A071D1B00113625 /* UINavigationBar+FixedLogo.h */,
@@ -577,7 +572,6 @@
 				50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */,
 				50F9F05719FDAA5E00C166CA /* BGModel.m in Sources */,
 				50EF38B71A0334E200CC4294 /* BGShowsViewController.m in Sources */,
-				509E282F19F4A90F001F5CEA /* UIColor+Additions.m in Sources */,
 				50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,

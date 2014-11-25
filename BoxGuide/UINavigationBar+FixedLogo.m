@@ -10,14 +10,18 @@
 #import "UIColor+BoxGuide.h"
 #import <JRSwizzle/JRSwizzle.h>
 
+static const CGFloat kNavigtionBarFixedHeight = 44.0f;
+
 @implementation UINavigationBar (FixedLogo)
 
 + (void)load {
+    
+    /*
     NSError *error = nil;
     [self jr_swizzleMethod:@selector(initWithFrame:) withMethod:@selector(bg_initWithFrame:) error:&error];
     NSAssert(error == nil, @"An error occurred when swizzling UINavigationBar.");
     [self jr_swizzleMethod:@selector(sizeThatFits:) withMethod:@selector(bg_sizeThatFits:) error:&error];
-    NSAssert(error == nil, @"An error occurred when swizzling UINavigationBar.");
+    NSAssert(error == nil, @"An error occurred when swizzling UINavigationBar.");*/
 }
 
 - (id)bg_initWithFrame:(CGRect)frame {
@@ -27,7 +31,7 @@
         
         UILabel *logoLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         logoLabel.text = [NSBundle mainBundle].infoDictionary[@"CFBundleName"];
-        logoLabel.font = [UIFont fontWithName:@"Lobster1.4" size:22.0f];
+        logoLabel.font = [UIFont fontWithName:@"Lobster1.4" size:22.0f]; // TODO: Create method to create this font.
         logoLabel.textColor = [UIColor bg_logoTextColor];
         [navBar addSubview:logoLabel];
         
@@ -41,7 +45,7 @@
 
 - (CGSize)bg_sizeThatFits:(CGSize)size
 {
-    CGSize newSize = CGSizeMake(self.frame.size.width, 44);
+    CGSize newSize = CGSizeMake(CGRectGetWidth(self.frame), kNavigtionBarFixedHeight);
     return newSize;
 }
 

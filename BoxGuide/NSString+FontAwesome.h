@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSInteger, BGFontAwesomeIcon) {
     BGFontAwesomeIconMenu = 0xf0c9,
-    BGFontAwesomeIconAddShow = 0xf0fe
+    BGFontAwesomeIconAddShow = 0xf067
 };
 
 @interface NSString (FontAwesome)

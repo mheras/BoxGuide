@@ -7,9 +7,16 @@
 //
 
 #import "UIColor+BoxGuide.h"
-#import "UIColor+Additions.h"
 
 @implementation UIColor (BoxGuide)
+
+// TEMPLATE COLORS
+
++ (UIColor *)bg_selectedColor {
+    return [UIColor colorWithRed:0.455f green:0.749f blue:0.918f alpha:1.00f];
+}
+
+// PUBLIC COLORS
 
 + (UIColor *)bg_topBarBackgroundColor {
     return [UIColor colorWithRed:0.855f green:0.314f blue:0.055f alpha:1.00f];
@@ -23,12 +30,8 @@
     return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
 }
 
-+ (UIColor *)bg_tabBarBackgroundColor {
-    return [UIColor colorWithRed:0.757f green:0.251f blue:0.000f alpha:1.00f];
-}
-
 + (UIColor *)bg_tabBarSelectedBackgroundColor {
-    return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
+    return [UIColor bg_selectedColor];
 }
 
 + (UIColor *)bg_tabBarTextColor {
@@ -36,11 +39,11 @@
 }
 
 + (UIColor *)bg_tabBarSelectedTextColor {
-    return [UIColor colorWithRed:0.855f green:0.314f blue:0.055f alpha:1.00f];
+    return [UIColor bg_selectedColor];
 }
 
 + (UIColor *)bg_rootMenuOptionSelectedColor {
-    return [UIColor colorWithRed:0.455f green:0.749f blue:0.918f alpha:1.00f];
+    return [UIColor bg_selectedColor];
 }
 
 + (UIColor *)bg_rootMenuOptionDeselectedColor {
@@ -48,7 +51,7 @@
 }
 
 + (UIColor *)bg_contentBackgroundColor {
-    return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
+    return [UIColor colorWithRed:0.255f green:0.271f blue:0.286f alpha:1.00f];
 }
 
 @end

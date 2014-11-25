@@ -70,9 +70,9 @@
 }
 
 - (void)setupLookAndFeel {
-    [UINavigationBar appearance].barTintColor = [UIColor bg_topBarBackgroundColor];
-    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-    [UINavigationBar appearance].barStyle = UIBarStyleBlackOpaque;
+    //[UINavigationBar appearance].barTintColor = [UIColor bg_topBarBackgroundColor];
+    //[UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].barStyle = UIBarStyleBlackTranslucent;
 }
 
 @end

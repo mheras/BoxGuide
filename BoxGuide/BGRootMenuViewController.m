@@ -9,6 +9,7 @@
 #import "BGRootMenuViewController.h"
 #import "BGRootMenuTableViewCell.h"
 #import "BGDummyViewController.h" // TODO: Remove it.
+#import "BGShowsAddPopularViewController.h" // TODO: Remove it.
 #import "BGShowsViewController.h"
 #import "BGShowsUpcomingViewController.h"
 #import "BGShowsRecentViewController.h"
@@ -63,17 +64,12 @@ static NSString * const kOptionHelpKey = @"RootMenu.Options.Help";
     self.tableView.scrollIndicatorInsets = insets;
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-
 - (UIViewController *)defaultViewController {
-    return [[UINavigationController alloc] initWithRootViewController:self.viewControllerPerOption[[[self.optionsPerSection firstObject] firstObject]]];
+    return self.viewControllerPerOption[[[self.optionsPerSection firstObject] firstObject]];
 }
 
 - (BGViewController *)createShowsTabBarController {
-    BGTabBarController *showsTabBarController = [[BGTabBarController alloc] initWithViewControllers:@[[[BGShowsViewController alloc] init], [[BGShowsUpcomingViewController alloc] init], [[BGShowsRecentViewController alloc] init]]];
-    showsTabBarController.title = NSLocalizedString(kOptionShowsKey, nil);
+    BGTabBarController *showsTabBarController = [[BGTabBarController alloc] initWithViewControllers:@[[[UINavigationController alloc] initWithRootViewController:[[BGShowsAddPopularViewController alloc] init]], [[UINavigationController alloc] initWithRootViewController:[[BGShowsViewController alloc] init]], [[UINavigationController alloc] initWithRootViewController:[[BGShowsUpcomingViewController alloc] init]], [[UINavigationController alloc] initWithRootViewController:[[BGShowsRecentViewController alloc] init]]]];
     return showsTabBarController;
 }
 
@@ -106,11 +102,8 @@ static NSString * const kOptionHelpKey = @"RootMenu.Options.Help";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    BGViewController *viewController = self.viewControllerPerOption[self.optionsPerSection[indexPath.section][indexPath.row]];
-    UINavigationController *contentNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    
-    [self.mm_drawerController setCenterViewController:contentNavigationController withCloseAnimation:YES completion:nil];
+    UIViewController *viewController = self.viewControllerPerOption[self.optionsPerSection[indexPath.section][indexPath.row]];
+    [self.mm_drawerController setCenterViewController:viewController withCloseAnimation:YES completion:nil];
 }
 
 @end
