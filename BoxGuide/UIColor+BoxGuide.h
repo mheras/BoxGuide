@@ -10,8 +10,6 @@
 
 @interface UIColor (BoxGuide)
 
-+ (UIColor *)bg_topBarBackgroundColor;
-
 + (UIColor *)bg_logoTextColor;
 
 + (UIColor *)bg_topBarTextColor;

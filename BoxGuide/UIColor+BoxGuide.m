@@ -18,10 +18,6 @@
 
 // PUBLIC COLORS
 
-+ (UIColor *)bg_topBarBackgroundColor {
-    return [UIColor colorWithRed:0.855f green:0.314f blue:0.055f alpha:1.00f];
-}
-
 + (UIColor *)bg_logoTextColor {
     return [UIColor colorWithRed:0.965f green:0.945f blue:0.918f alpha:1.00f];
 }

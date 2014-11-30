@@ -9,6 +9,7 @@
 #import "BGAppDelegate.h"
 #import "BGRootMenuViewController.h"
 #import "UIColor+BoxGuide.h"
+#import "UIFont+BoxGuide.h"
 #import <MMDrawerController/MMDrawerController.h>
 #import <MMDrawerController/MMDrawerVisualState.h>
 
@@ -70,9 +71,8 @@
 }
 
 - (void)setupLookAndFeel {
-    //[UINavigationBar appearance].barTintColor = [UIColor bg_topBarBackgroundColor];
-    //[UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlackTranslucent;
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor bg_topBarTextColor], NSFontAttributeName : [UIFont bg_defaultBoldFontOfSize:20.0f]}];
 }
 
 @end
