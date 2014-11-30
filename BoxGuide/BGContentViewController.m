@@ -33,7 +33,7 @@
     if (firstViewController == self) {
         if ([[self findFurthestParent:self] presentingViewController] != nil) {
             // ...and it's being presented, show the cancel button.
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onCancelButtonTouch)];
+            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Content.Cancel", nil) style:UIBarButtonItemStylePlain target:self action:@selector(onCancelButtonTouch)];
         } else {
             // ...and it's not being presented, show the menu button.
             self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:[NSString bg_stringWithFontAwesomeIcon:BGFontAwesomeIconMenu] style:UIBarButtonItemStylePlain target:self action:@selector(onRootMenuButtonTouch)];

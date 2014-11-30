@@ -11,6 +11,7 @@
 #import "BGShowsService.h"
 #import "BGAddShowCollectionViewCell.h"
 #import "BGPaginatorCollectionViewHandler.h"
+#import "BGTabBarController.h"
 
 @interface BGShowsAddPopularViewController ()
 
@@ -48,6 +49,17 @@
     //self.refreshControl = [[UIRefreshControl alloc] init];
     //[self.collectionView addSubview:self.refreshControl];
     //[self.refreshControl addTarget:self action:@selector(refreshContent) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    BGTabBarController *tabBarController = self.bg_tabBarController;
+    
+    if (tabBarController) {
+        self.collectionView.contentInset = UIEdgeInsetsMake(self.collectionView.contentInset.top, self.collectionView.contentInset.left, tabBarController.toolbarHeight, self.collectionView.contentInset.right);
+        self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(self.collectionView.scrollIndicatorInsets.top, self.collectionView.scrollIndicatorInsets.left, tabBarController.toolbarHeight, self.collectionView.scrollIndicatorInsets.right);
+    }
 }
 
 - (NSString *)title {

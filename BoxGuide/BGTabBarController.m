@@ -17,6 +17,9 @@
 
 @end
 
+static const CGSize kToolbarSize = {320.0f, 44.0f};
+static const NSTimeInterval kAnimationDuration = 0.15;
+
 @interface BGTabBarController ()
 
 @property (nonatomic, weak) BGViewController *currentViewController;
@@ -86,13 +89,13 @@
     self.toolbar.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[toolbar]|" options:0 metrics:nil views:@{@"toolbar" : self.toolbar}]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.toolbar attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f]];
-    [self.toolbar addConstraint:[NSLayoutConstraint constraintWithItem:self.toolbar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:44.0f]];
+    [self.toolbar addConstraint:[NSLayoutConstraint constraintWithItem:self.toolbar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:kToolbarSize.height]];
     
     [self.toolbar addSubview:self.segmentedControl];
     
     // Constraints for the segmented control.
     self.segmentedControl.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.toolbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[segmentedControl(segmentedControlWidth)]" options:0 metrics:@{@"segmentedControlWidth" : @320} views:@{@"segmentedControl" : self.segmentedControl}]];
+    [self.toolbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[segmentedControl(segmentedControlWidth)]" options:0 metrics:@{@"segmentedControlWidth" : @(kToolbarSize.width)} views:@{@"segmentedControl" : self.segmentedControl}]];
     [self.toolbar addConstraint:[NSLayoutConstraint constraintWithItem:self.segmentedControl attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.toolbar attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
     [self.toolbar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[segmentedControl]|" options:0 metrics:nil views:@{@"segmentedControl" : self.segmentedControl}]];
 }
@@ -138,7 +141,7 @@
         self.segmentedControl.userInteractionEnabled = NO;
         
         BGToWeak(self, weakSelf);
-        [UIView animateWithDuration:0.15f delay:0 options:0 animations:^{
+        [UIView animateWithDuration:kAnimationDuration delay:0 options:0 animations:^{
             toViewController.view.transform = CGAffineTransformIdentity;
             weakSelf.currentViewController.view.transform = CGAffineTransformMakeTranslation((weakSelf.previousSelectedIndex < weakSelf.selectedIndex ? -1 : 1) * CGRectGetWidth(weakSelf.currentViewController.view.frame), 0.0f);
             [weakSelf.view layoutIfNeeded];
@@ -166,6 +169,25 @@
 
 - (NSInteger)selectedIndex {
     return self.segmentedControl.selectedSegmentIndex;
+}
+
+- (CGFloat)toolbarHeight {
+    return kToolbarSize.height;
+}
+
+@end
+
+@implementation UIViewController (BGTabBarController)
+
+- (BGTabBarController *)bg_tabBarController {
+    
+    if ([self.parentViewController isKindOfClass:[BGTabBarController class]]) {
+        return (BGTabBarController *)self.parentViewController;
+    }
+    if (self.parentViewController) {
+        return [self.parentViewController bg_tabBarController];
+    }
+    return nil;
 }
 
 @end

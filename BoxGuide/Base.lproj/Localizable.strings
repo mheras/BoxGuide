@@ -6,6 +6,8 @@
   Copyright (c) 2014 HSoft. All rights reserved.
 */
 
+"Content.Cancel" = "Cancel";
+
 "RootMenu.Options.Show" = "TV Shows";
 "RootMenu.Options.Lists" = "Lists";
 "RootMenu.Options.Movies" = "Movies";
