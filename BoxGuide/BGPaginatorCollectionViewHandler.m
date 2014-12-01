@@ -153,15 +153,6 @@
         self.updateCellBlock(cell, object);
     }
 
-    // Since the method - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath is only available on iOS 8+, we need to do this ugly hack. We cannot simply use the method - (void)scrollViewDidScroll:(UIScrollView *)scrollView as it is not triggered when the orientation changes (it might be case that the last cell becomes visible upon rotation). And also, since we are doing this in this method (and we are not supposed to do it), we need to delay its execution.
-    BGToWeak(self, weakSelf);
-    // TODO: Is 0.5 a good value for dispatch_after?
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (indexPath.item == weakSelf.loadedObjects.count - 1 && ![weakSelf.paginator isLoading] && [weakSelf.paginator hasMorePages]) {
-            [weakSelf loadMore];
-        }
-    });
-
     return cell;
 }
 
@@ -171,6 +162,14 @@
         return [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([BGPaginatorCollectionViewFooter class]) forIndexPath:indexPath];
     }
     return nil;
+}
+
+#pragma mark - UICollectionViewDelegate methods
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.item == self.loadedObjects.count - 1 && ![self.paginator isLoading] && [self.paginator hasMorePages]) {
+        [self loadMore];
+    }
 }
 
 @end

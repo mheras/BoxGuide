@@ -10,6 +10,7 @@
 		502637E119E7070000B80ADA /* BGShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E019E7070000B80ADA /* BGShow.m */; };
 		502637E419E71B1900B80ADA /* BGShowsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E319E71B1900B80ADA /* BGShowsService.m */; };
 		502637EA19E71DEE00B80ADA /* BGService.m in Sources */ = {isa = PBXBuildFile; fileRef = 502637E919E71DEE00B80ADA /* BGService.m */; };
+		5029B3381A2C04F2001C2215 /* BGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5029B3371A2C04F2001C2215 /* BGConstants.m */; };
 		502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F151C19E4ACEF00F7028C /* BGTableViewCell.m */; };
 		502F152419E4E92000F7028C /* BGRootMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */; };
 		502F152A19E4EA0600F7028C /* BGRootMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F152919E4EA0600F7028C /* BGRootMenuTableViewCell.m */; };
@@ -71,6 +72,8 @@
 		502637E319E71B1900B80ADA /* BGShowsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShowsService.m; sourceTree = "<group>"; };
 		502637E819E71DEE00B80ADA /* BGService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGService.h; sourceTree = "<group>"; };
 		502637E919E71DEE00B80ADA /* BGService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGService.m; sourceTree = "<group>"; };
+		5029B3361A2C04F2001C2215 /* BGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGConstants.h; sourceTree = "<group>"; };
+		5029B3371A2C04F2001C2215 /* BGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGConstants.m; sourceTree = "<group>"; };
 		502F151B19E4ACEF00F7028C /* BGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTableViewCell.h; sourceTree = "<group>"; };
 		502F151C19E4ACEF00F7028C /* BGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTableViewCell.m; sourceTree = "<group>"; };
 		502F152319E4E92000F7028C /* BGRootMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BGRootMenuTableViewCell.xib; sourceTree = "<group>"; };
@@ -167,6 +170,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5029B3341A2C0490001C2215 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				5029B3351A2C04A1001C2215 /* Paginator */,
+				5029B3361A2C04F2001C2215 /* BGConstants.h */,
+				5029B3371A2C04F2001C2215 /* BGConstants.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		5029B3351A2C04A1001C2215 /* Paginator */ = {
+			isa = PBXGroup;
+			children = (
+				505525F719FD37A600DC6616 /* BGPaginator.h */,
+				505525F819FD389100DC6616 /* BGPaginatorCollectionViewHandler.h */,
+				505525F919FD389100DC6616 /* BGPaginatorCollectionViewHandler.m */,
+			);
+			name = Paginator;
+			sourceTree = "<group>";
+		};
 		50783F3E19F07C00006E3E05 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,10 +241,8 @@
 				50783F4519F07CD7006E3E05 /* Views */,
 				50783F4419F07C80006E3E05 /* View Controllers */,
 				50783F4119F07C45006E3E05 /* Services */,
-				50783F4619F07D1B006E3E05 /* Misc */,
-				505525F719FD37A600DC6616 /* BGPaginator.h */,
-				505525F819FD389100DC6616 /* BGPaginatorCollectionViewHandler.h */,
-				505525F919FD389100DC6616 /* BGPaginatorCollectionViewHandler.m */,
+				50783F4619F07D1B006E3E05 /* Categories */,
+				5029B3341A2C0490001C2215 /* Misc */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -277,7 +298,7 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		50783F4619F07D1B006E3E05 /* Misc */ = {
+		50783F4619F07D1B006E3E05 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				50D745B519E74BDD0088C99C /* NSError+Service.h */,
@@ -293,7 +314,7 @@
 				506A38921A0731C800113625 /* UIFont+BoxGuide.h */,
 				506A38931A0731C800113625 /* UIFont+BoxGuide.m */,
 			);
-			name = Misc;
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		50783F4719F07D37006E3E05 /* Views */ = {
@@ -572,6 +593,7 @@
 				50D745B719E74BDD0088C99C /* NSError+Service.m in Sources */,
 				50F9F05719FDAA5E00C166CA /* BGModel.m in Sources */,
 				50EF38B71A0334E200CC4294 /* BGShowsViewController.m in Sources */,
+				5029B3381A2C04F2001C2215 /* BGConstants.m in Sources */,
 				50783F4E19F07E3B006E3E05 /* BGServicePaginator.m in Sources */,
 				502F151D19E4ACEF00F7028C /* BGTableViewCell.m in Sources */,
 				50C4D65719E38F570051F236 /* BGRootMenuViewController.m in Sources */,

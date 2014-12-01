@@ -12,6 +12,7 @@
 #import "BGAddShowCollectionViewCell.h"
 #import "BGPaginatorCollectionViewHandler.h"
 #import "BGTabBarController.h"
+#import "BGConstants.h"
 
 @interface BGShowsAddPopularViewController ()
 
@@ -35,11 +36,8 @@
         BGShow *show = (BGShow *)object;
         
         addShowCell.name = show.name;
-        // TODO: Improve this! Do it somewhere else and use prepareCell to reset the cell with default values instead of setting nil.
         if (show.posterPath) {
-            addShowCell.posterUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://image.tmdb.org/t/p/w342%@", show.posterPath]];
-        } else {
-            addShowCell.posterUrl = nil;
+            addShowCell.backdropUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", kImageBaseURL, kBackdropSize780, show.backdropPath]];
         }
     }];
     

@@ -9,8 +9,7 @@
 #import "BGService.h"
 #import "BGServiceError.h"
 #import <RestKit/RestKit.h>
-
-NSString * const kAPIKey = @"b8cef09e0eb4c815b2ad4c2197136a5b";
+#import "BGConstants.h"
 
 @implementation BGService
 
@@ -20,7 +19,7 @@ NSString * const kAPIKey = @"b8cef09e0eb4c815b2ad4c2197136a5b";
     BGToWeak(self, weakSelf);
     dispatch_once(&onceToken, ^{
         [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-        sharedManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://api.themoviedb.org"]];
+        sharedManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:kBaseURL]];
         [weakSelf setupManager:sharedManager];
     });
     return sharedManager;

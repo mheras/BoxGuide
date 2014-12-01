@@ -8,6 +8,7 @@
 
 #import "BGShowsService.h"
 #import "BGShow.h"
+#import "BGConstants.h"
 #import <RestKit/RestKit.h>
 
 @implementation BGShowsService
@@ -36,7 +37,7 @@
 - (RKMapping *)showMapping {
     
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[BGShow class]];
-    [mapping addAttributeMappingsFromDictionary:@{@"name" : @"name", @"poster_path" : @"posterPath"}];
+    [mapping addAttributeMappingsFromDictionary:@{@"name" : @"name", @"poster_path" : @"posterPath", @"backdrop_path" : @"backdropPath"}];
     
     return mapping;
 }

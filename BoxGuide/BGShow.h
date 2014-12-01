@@ -13,5 +13,6 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *posterPath;
+@property (nonatomic, copy) NSString *backdropPath;
 
 @end

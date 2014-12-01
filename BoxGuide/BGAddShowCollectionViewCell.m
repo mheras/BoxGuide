@@ -12,11 +12,15 @@
 @interface BGAddShowCollectionViewCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UIImageView *backdropImageView;
 
 @end
 
 @implementation BGAddShowCollectionViewCell
+
+- (void)prepareForReuse {
+    self.backdropUrl = nil;
+}
 
 - (void)setName:(NSString *)name {
     self.nameLabel.text = name;
@@ -26,12 +30,12 @@
     return self.nameLabel.text;
 }
 
-- (void)setPosterUrl:(NSURL *)posterUrl {
-    [self.imageView bg_setImageFromURL:posterUrl placeholderImage:nil];
+- (void)setBackdropUrl:(NSURL *)backdropUrl {
+    [self.backdropImageView bg_setImageFromURL:backdropUrl placeholderImage:nil];
 }
 
-- (NSURL *)posterUrl {
-    return self.imageView.bg_url;
+- (NSURL *)backdropUrl {
+    return self.backdropImageView.bg_url;
 }
 
 @end
